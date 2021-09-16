@@ -10,3 +10,18 @@ If you want to contribute, please refer to the [contributing guidelines](./CONTR
 
 - [Info](doc/Info.md)
 - [Cypress tests](doc/Cypress.md)
+
+**Setup**
+> git clone https://github.com/MoleTech-io/pancake-toolkit
+> yarn
+> yarn build 
+
+
+> git clone https://github.com/MoleTech-io/pancake-frontend
+> yarn 
+> yarn start
+
+> File structure should like:
+>  /root
+>  /root/pancake-frontend
+>  /root/pancake-toolkit

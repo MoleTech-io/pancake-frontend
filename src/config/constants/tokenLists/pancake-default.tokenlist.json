@@ -7,9 +7,17 @@
     "patch": 0
   },
   "tags": {},
-  "logoURI": "https://pancakeswap.finance/logo.png",
+  "logoURI": "https://swap.moletech.io/logo.png",
   "keywords": ["pancake", "default"],
   "tokens": [
+    {
+      "name": "Mole Token",
+      "symbol": "MOLE",
+      "address": "0x33831Bee1CE63c95dAb6Cf23F83fF0B6A29a2837",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://swap.moletech.io/images/tokens/0x33831Bee1CE63c95dAb6Cf23F83fF0B6A29a2837.png"
+    },
     {
       "name": "WBNB Token",
       "symbol": "WBNB",
@@ -51,7 +59,7 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0x55d398326f99059ff775485246999027b3197955.png"
     },
     {
-      "name": "MoleSwap Token",
+      "name": "PancakeSwap Token",
       "symbol": "CAKE",
       "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
       "chainId": 56,

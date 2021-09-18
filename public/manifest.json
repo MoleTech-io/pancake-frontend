@@ -1,8 +1,8 @@
 {
-  "short_name": "PancakeSwap",
-  "name": "PancakeSwap",
+  "short_name": "MoleSwap",
+  "name": "MoleSwap",
   "description": "Farm CAKE with Pancake LP Tokens",
-  "homepage_url": "https://pancakeswap.finance",
+  "homepage_url": "https://swap.moletech.io",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1FC7D4",

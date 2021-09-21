@@ -45,7 +45,6 @@ export default function useBUSDPrice(currency?: Currency): Price | undefined {
     const ethPairETHAmount = ethPair?.reserveOf(WBNB)
     const ethPairETHBUSDValue: JSBI =
       ethPairETHAmount && busdEthPair ? busdEthPair.priceOf(WBNB).quote(ethPairETHAmount).raw : JSBI.BigInt(0)
-
     // all other tokens
     // first try the busd pair
     if (
@@ -69,9 +68,9 @@ export default function useBUSDPrice(currency?: Currency): Price | undefined {
   }, [chainId, currency, ethPair, ethPairState, busdEthPair, busdEthPairState, busdPair, busdPairState, wrapped])
 }
 
-export const useCakeBusdPrice = (): Price | undefined => {
-  const cakeBusdPrice = useBUSDPrice(tokens.cake)
-  return cakeBusdPrice
+export const useMoleBusdPrice = (): Price | undefined => {
+  const moleBusdPrice = useBUSDPrice(tokens.mole)
+  return moleBusdPrice
 }
 
 export const useBNBBusdPrice = (): Price | undefined => {

@@ -4,7 +4,7 @@ import { PageMeta } from './types'
 export const DEFAULT_META: PageMeta = {
   title: 'MoleSwap',
   description:
-    'The most popular AMM on BSC by user count! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by MoleSwap), NFTs, and more, on a platform you can trust.',
+    'The most popular AMM on BSC by user count! Earn MOLE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by MoleSwap), NFTs, and more, on a platform you can trust.',
   image: 'https://swap.moletech.io/logo.png',
 }
 
@@ -112,17 +112,17 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
     case '/info':
       return {
         title: `${t('Overview')} | ${t('MoleSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        description: 'View statistics for Moleswap exchanges.',
       }
     case '/info/pools':
       return {
         title: `${t('Pools')} | ${t('MoleSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        description: 'View statistics for Moleswap exchanges.',
       }
     case '/info/tokens':
       return {
         title: `${t('Pools')} | ${t('MoleSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        description: 'View statistics for Moleswap exchanges.',
       }
     default:
       return null

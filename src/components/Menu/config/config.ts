@@ -93,12 +93,12 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
       {
         label: t('Blog'),
-        href: 'https://pancakeswap.medium.com',
+        href: 'https://www.youtube.com/watch?v=TKSdt42M1_k',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: t('Docs'),
-        href: 'https://docs.pancakeswap.finance',
+        href: 'https://moletech.io',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],

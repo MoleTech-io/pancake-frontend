@@ -85,7 +85,10 @@ export const useBnbPrices = (): BnbPrices | undefined => {
   useEffect(() => {
     const fetch = async () => {
       const [block24, block48, blockWeek] = blocks
-      const { bnbPrices, error: fetchError } = await fetchBnbPrices(block24.number, block48.number, blockWeek.number)
+      // modified by eric block per week cannot be fetched, use calculated value start
+      const blockWeekNumber = blockWeek ? blockWeek.number : block48.number - (block24.number - block48.number) * 5
+      const { bnbPrices, error: fetchError } = await fetchBnbPrices(block24.number, block48.number, blockWeekNumber)
+      // modified by eric block per week cannot be fetched, use calculated value end
       if (fetchError) {
         setError(true)
       } else {

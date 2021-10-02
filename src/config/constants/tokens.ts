@@ -23,6 +23,33 @@ export const mainnetTokens = {
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  // DSC TEST for MOLE-BUST LP start
+  // "dsc-babymole": new Token(
+  //   MAINNET,
+  //   '0x9b2649459288C127999D4a254074A83B3cAa6e4A',
+  //   18,
+  //   'DSC-BABYMOLE LP',
+  //   'DSC-BABYMOLE LP',
+  //   'https://moletech.io/',
+  // ),
+  // dsc: new Token(
+  //   MAINNET,
+  //   '0x82C52FF5443906f11Bf8a94B481B455317B92F8e',
+  //   18,
+  //   'DSC',
+  //   'DSC Token',
+  //   'https://moletech.io/',
+  // ),
+  // DSC TEST for MOLE-BUST LP end
+
+  'MOLE-BUSD': new Token(
+    MAINNET,
+    '0xFA71B4dA0d296a5F01E987A1094b764b8Ea4FfeD',
+    18,
+    'MOLE-BUSD LP',
+    'MOLE-BUSD LP',
+    'https://moletech.io/',
+  ),
   mole: new Token(
     MAINNET,
     '0x33831Bee1CE63c95dAb6Cf23F83fF0B6A29a2837',

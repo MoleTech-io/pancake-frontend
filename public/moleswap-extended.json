@@ -1875,6 +1875,14 @@
         "chainId": 56,
         "decimals": 12,
         "logoURI": "https://tokens.pancakeswap.finance/images/0xb86AbCb37C3A4B64f74f59301AFF131a1BEcC787.png"
+      },
+      {
+        "name": "MOLE-BUSD",
+        "symbol": "MOLE-BUSD",
+        "address": "0xFA71B4dA0d296a5F01E987A1094b764b8Ea4FfeD",
+        "chainId": 56,
+        "decimals": 18,
+        "logoURI": "https://tokens.pancakeswap.finance/images/0xFA71B4dA0d296a5F01E987A1094b764b8Ea4FfeD.png"
       }
     ]
   }

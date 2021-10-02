@@ -18,19 +18,37 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
   },
+    {
+      sousId: 220,
+      stakingToken: serializedTokens['MOLE-BUSD'],
+      earningToken: serializedTokens.mole,
+      contractAddress: {
+        97: '',
+        56: '0x74Ba18DDc80CC70Dda2c83e0e9e4F427907fBa76',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      sortOrder: 999,
+      tokenPerBlock: '0.08',
+      isFinished: false,
+    },
+    // DSC TEST for MOLE-BUST LP start
     // {
     //   sousId: 220,
-    //   stakingToken: serializedTokens.cake,
-    //   earningToken: serializedTokens.chess,
+    //   stakingToken: serializedTokens["dsc-babymole"],
+    //   earningToken: serializedTokens.dsc,
     //   contractAddress: {
     //     97: '',
-    //     56: '0x4D1Ec426d0d7fb6bF344Dd372d0502EDD71c8d88',
+    //     56: '0x4B248CDef331C7089F9ffAaF9E4b82b2347B3EfF',
     //   },
     //   poolCategory: PoolCategory.CORE,
     //   harvest: true,
     //   sortOrder: 999,
-    //   tokenPerBlock: '0.0861',
+    //   tokenPerBlock: '0.034',
+    //   isFinished: false,
     // },
+    // DSC TEST for MOLE-BUST LP end
+
     // {
     //   sousId: 219,
     //   stakingToken: serializedTokens.cake,

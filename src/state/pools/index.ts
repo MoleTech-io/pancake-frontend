@@ -5,6 +5,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { PoolsState, SerializedPool, CakeVault, VaultFees, VaultUser, AppThunk } from 'state/types'
 import { getPoolApr } from 'utils/apr'
 import { getBalanceNumber } from 'utils/formatBalance'
+import molePoolPrices from 'config/constants/price.json'
 import { fetchPoolsBlockLimits, fetchPoolsStakingLimits, fetchPoolsTotalStaking } from './fetchPools'
 import {
   fetchPoolsAllowance,
@@ -55,10 +56,14 @@ export const fetchPoolsPublicDataAsync = (currentBlock: number) => async (dispat
     const isPoolFinished = pool.isFinished || isPoolEndBlockExceeded
 
     const stakingTokenAddress = pool.stakingToken.address ? pool.stakingToken.address.toLowerCase() : null
-    const stakingTokenPrice = stakingTokenAddress ? prices[stakingTokenAddress] : 0
+    let stakingTokenPrice = 0
+    if(stakingTokenAddress && prices[stakingTokenAddress]) stakingTokenPrice = prices[stakingTokenAddress]
+    if(stakingTokenAddress && molePoolPrices[stakingTokenAddress]) stakingTokenPrice = molePoolPrices[stakingTokenAddress]
 
     const earningTokenAddress = pool.earningToken.address ? pool.earningToken.address.toLowerCase() : null
-    const earningTokenPrice = earningTokenAddress ? prices[earningTokenAddress] : 0
+    let earningTokenPrice = 0
+    if(earningTokenAddress && prices[earningTokenAddress]) earningTokenPrice = prices[earningTokenAddress]
+    if(earningTokenAddress && molePoolPrices[earningTokenAddress]) earningTokenPrice = molePoolPrices[earningTokenAddress]
     const apr = !isPoolFinished
       ? getPoolApr(
           stakingTokenPrice,

@@ -1417,7 +1417,7 @@
   "No results": "Sonuç yok",
   "Error occurred, please try again": "Hata meydana geldi, lütfen tekrar dene",
   "LP reward APR": "LP ödülü PAR",
-  "out of $%totalFees% total fees": "%totalFees%$ tutarındaki toplam ücretlerin şu kadarı:",
+  "out of $%totalFees% total fees": "toplam ücret %totalFees%$",
   "24H": "24 sa",
   "7D performance": "7 günlük performans",
   "Based on last 7 days' performance. Does not account for impermanent loss": "Son 7 günün performansına dayalıdır. Geçici kayıpları hesaba katmaz",

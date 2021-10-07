@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { ethers } from 'ethers'
 import { formatUnits } from 'ethers/lib/utils'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@pancakeswap/uikit'
+import { Heading, Flex, Image, Text, Button, ArrowForwardIcon } from '@pancakeswap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
@@ -231,7 +231,7 @@ const Pools: React.FC = () => {
       latinise(pool.earningToken.symbol.toLowerCase()).includes(lowercaseQuery),
     )
   }
-
+  chosenPools = chosenPools.filter((pool)=> !pool.isAutoVault && pool.sousId !== 0)
   chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
   chosenPoolsLength.current = chosenPools.length
 
@@ -252,22 +252,20 @@ const Pools: React.FC = () => {
   return (
     <>
       <PageHeader>
-        <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
-          <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('Syrup Pools')}
-            </Heading>
-            <Heading scale="md" color="text">
-              {t('Just stake some tokens to earn.')}
-            </Heading>
-            <Heading scale="md" color="text">
-              {t('High APR, low risk.')}
-            </Heading>
-          </Flex>
-          {/* <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
-            <HelpButton />
-          </Flex> */}
-        </Flex>
+        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+          {t('Farms')}
+        </Heading>
+        <Heading scale="lg" color="text">
+          {t('Stake LP tokens to earn.')}
+        </Heading>
+        <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              {t('Community Auctions')}
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NavLink>
       </PageHeader>
       <Page>
         <PoolControls>

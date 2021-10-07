@@ -7,7 +7,7 @@ import { Auction, AuctionStatus, Bidder, BidderAuction } from 'config/constants/
 import { ethersToBigNumber } from 'utils/bigNumber'
 
 export const FORM_ADDRESS =
-  'https://docs.google.com/forms/d/e/1FAIpQLScUkwbsMWwg7L5jjGjEcmv6RsoCNhFDkV3xEpRu2KcJrr47Sw/viewform'
+  'https://docs.google.com/forms/d/e/1FAIpQLScOR80zJCISKm5xiOh7UQ-u9cGB7a2qsUaAVwyGPe6LfZ-qoQ/viewform'
 
 // Sorts bidders received from smart contract by bid amount in descending order (biggest -> smallest)
 // Also amends bidder information with getBidderInfo

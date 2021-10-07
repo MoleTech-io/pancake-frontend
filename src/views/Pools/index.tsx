@@ -231,7 +231,7 @@ const Pools: React.FC = () => {
       latinise(pool.earningToken.symbol.toLowerCase()).includes(lowercaseQuery),
     )
   }
-
+  chosenPools = chosenPools.filter((pool)=> !pool.isAutoVault && pool.sousId !== 0)
   chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
   chosenPoolsLength.current = chosenPools.length
 

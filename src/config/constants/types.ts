@@ -97,6 +97,7 @@ interface PoolConfigBaseProps {
 export interface SerializedPoolConfig extends PoolConfigBaseProps {
   earningToken: SerializedToken
   stakingToken: SerializedToken
+  isLp?: boolean
 }
 
 export interface DeserializedPoolConfig extends PoolConfigBaseProps {

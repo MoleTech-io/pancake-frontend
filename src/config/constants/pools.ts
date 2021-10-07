@@ -22,6 +22,7 @@ const pools: SerializedPoolConfig[] = [
       sousId: 220,
       stakingToken: serializedTokens['MOLE-BUSD'],
       earningToken: serializedTokens.mole,
+      isLp: true,
       contractAddress: {
         97: '',
         56: '0x74Ba18DDc80CC70Dda2c83e0e9e4F427907fBa76',

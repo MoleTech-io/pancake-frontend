@@ -41,12 +41,13 @@ export const useFetchUserPools = (account) => {
   }, [account, dispatch, fastRefresh])
 }
 
-export const usePools = (): { pools: DeserializedPool[]; userDataLoaded: boolean } => {
+export const usePools = (isFarm?: boolean ): { pools: DeserializedPool[]; userDataLoaded: boolean } => {
   const { pools, userDataLoaded } = useSelector((state: State) => ({
     pools: state.pools.data,
     userDataLoaded: state.pools.userDataLoaded,
   }))
-  return { pools: pools.map(transformPool), userDataLoaded }
+  if(isFarm == null) return { pools: pools.map(transformPool), userDataLoaded }
+  return { pools: pools.filter(({isLp})=> isFarm ? isLp : !isLp).map(transformPool), userDataLoaded }
 }
 
 export const useFetchCakeVault = () => {

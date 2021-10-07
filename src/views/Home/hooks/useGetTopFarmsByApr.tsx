@@ -5,7 +5,7 @@ import { useAppDispatch } from 'state'
 import { fetchFarmsPublicDataAsync, nonArchivedFarms } from 'state/farms'
 import { getFarmApr } from 'utils/apr'
 import { orderBy } from 'lodash'
-import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
+import { FarmWithStakedValue } from 'views/FarmsOld/components/FarmCard/FarmCard'
 import { DeserializedFarm } from 'state/types'
 
 enum FetchStatus {

@@ -31,7 +31,6 @@ import Loading from 'components/Loading'
 import PoolCard from './components/PoolCard'
 import CakeVaultCard from './components/CakeVaultCard'
 import PoolTabButtons from './components/PoolTabButtons'
-import HelpButton from './components/HelpButton'
 import PoolsTable from './components/PoolsTable/PoolsTable'
 import { getAprData, getCakeVaultEarnings } from './helpers'
 
@@ -264,9 +263,6 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               {t('High APR, low risk.')}
             </Heading>
-          </Flex>
-          <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
-            <HelpButton />
           </Flex>
         </Flex>
       </PageHeader>

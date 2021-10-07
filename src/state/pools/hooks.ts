@@ -46,8 +46,8 @@ export const usePools = (isFarm?: boolean ): { pools: DeserializedPool[]; userDa
     pools: state.pools.data,
     userDataLoaded: state.pools.userDataLoaded,
   }))
-  if(isFarm == null) return { pools: pools.map(transformPool), userDataLoaded }
-  return { pools: pools.filter(({isLp})=> isFarm ? isLp : !isLp).map(transformPool), userDataLoaded }
+  if(isFarm || isFarm == null) return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || isLp).map(transformPool), userDataLoaded }
+  return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || !isLp).map(transformPool), userDataLoaded }
 }
 
 export const useFetchCakeVault = () => {

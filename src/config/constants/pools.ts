@@ -17,12 +17,12 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '10',
     sortOrder: 1,
     isFinished: false,
+    isLp: false,
   },
     {
       sousId: 220,
       stakingToken: serializedTokens['MOLE-BUSD'],
       earningToken: serializedTokens.mole,
-      isLp: true,
       contractAddress: {
         97: '',
         56: '0x74Ba18DDc80CC70Dda2c83e0e9e4F427907fBa76',
@@ -32,6 +32,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 999,
       tokenPerBlock: '0.08',
       isFinished: false,
+      isLp: true,
     },
     // DSC TEST for MOLE-BUST LP start
     // {

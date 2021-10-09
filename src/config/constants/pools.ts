@@ -35,6 +35,7 @@ const pools: SerializedPoolConfig[] = [
     isFinished: false,
     isLp: false,
     isUnlimited: true,
+    rewardsToken: 500000000000000000000000,
   },
   {
     sousId: 2,

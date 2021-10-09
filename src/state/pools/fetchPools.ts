@@ -60,8 +60,8 @@ export const fetchPoolsTotalStaking = async () => {
 
   const nonBnbPoolsTotalStaked = await multicall(cakeABI, callsNonBnbPools)
   const bnbPoolsTotalStaked = await multicall(wbnbABI, callsBnbPools)
-
-  return [
+  
+  const rawTotalStakings =  [
     ...nonBnbPools.map((p, index) => ({
       sousId: p.sousId,
       totalStaked: new BigNumber(nonBnbPoolsTotalStaked[index]).toJSON(),
@@ -71,6 +71,14 @@ export const fetchPoolsTotalStaking = async () => {
       totalStaked: new BigNumber(bnbPoolsTotalStaked[index]).toJSON(),
     })),
   ]
+  return rawTotalStakings.map((totalStaking)=>{
+    const pool = poolsConfig.find(({sousId}) => sousId === totalStaking.sousId)
+    if(pool.rewardsToken){
+      const totalStaked = new BigNumber(totalStaking.totalStaked).minus(pool.rewardsToken).toJSON()
+      return { ...totalStaking, totalStaked }
+    } 
+    return totalStaking
+  })
 }
 
 export const fetchPoolStakingLimit = async (sousId: number): Promise<BigNumber> => {

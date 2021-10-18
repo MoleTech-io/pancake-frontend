@@ -137,6 +137,14 @@
       "chainId": 56,
       "decimals": 18,
       "logoURI": "https://pancakeswap.finance/images/tokens/0xa7f552078dcc247c2684336020c03648500c6d9f.png"
+    },
+    {
+      "name": "TOO Token",
+      "symbol": "TOO",
+      "address": "0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF",
+      "chainId": 56,
+      "decimals": 10,
+      "logoURI": "https://swap.moletech.io/images/tokens/0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF.png"
     }
   ]
 }

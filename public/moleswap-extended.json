@@ -21,7 +21,7 @@
         "logoURI": "https://swap.moletech.io/images/tokens/0x33831Bee1CE63c95dAb6Cf23F83fF0B6A29a2837.png"
       },
       {
-        "name": "MoleSwap Token",
+        "name": "CAKE Token",
         "symbol": "CAKE",
         "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
         "chainId": 56,
@@ -1883,6 +1883,14 @@
         "chainId": 56,
         "decimals": 18,
         "logoURI": "https://tokens.pancakeswap.finance/images/0xFA71B4dA0d296a5F01E987A1094b764b8Ea4FfeD.png"
+      },
+      {
+        "name": "TOO Token",
+        "symbol": "TOO",
+        "address": "0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF",
+        "chainId": 56,
+        "decimals": 10,
+        "logoURI": "https://swap.moletech.io/images/tokens/0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF.png"
       }
     ]
   }

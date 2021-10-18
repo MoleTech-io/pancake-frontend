@@ -58,6 +58,14 @@ export const mainnetTokens = {
     'Mole Token',
     'https://moletech.io/',
   ),
+  too: new Token(
+    MAINNET,
+    '0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF',
+    10,
+    'TOO',
+    'TOO Token',
+    'https://toocoin.vip/',
+  ),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',

@@ -87,6 +87,23 @@ const pools: SerializedPoolConfig[] = [
     //   isUnlimited: false,
     // },
     // DSC TEST for MOLE-BUST LP end
+
+    {
+      sousId: 221,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.too,
+      contractAddress: {
+        97: '',
+        56: '0x7D0a43a56c2702758D1b2D94DE5b9d0b3954EbE0',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '56',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isUnlimited: false,
+    },
 ]
 
 export default pools

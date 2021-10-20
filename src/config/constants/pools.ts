@@ -87,7 +87,6 @@ const pools: SerializedPoolConfig[] = [
     //   isUnlimited: false,
     // },
     // DSC TEST for MOLE-BUST LP end
-
     {
       sousId: 221,
       stakingToken: serializedTokens.mole,

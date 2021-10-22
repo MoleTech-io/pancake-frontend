@@ -6,7 +6,7 @@ import { DeserializedPool } from 'state/types'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { useCakeVault } from 'state/pools/hooks'
 import Balance from 'components/Balance'
-import NotEnoughTokensModal from '../../PoolCard/Modals/NotEnoughTokensModal'
+import NotEnoughLPModal from '../../PoolCard/Modals/NotEnoughLPModal'
 import { convertSharesToCake } from '../../../helpers'
 import VaultStakeModal from '../VaultStakeModal'
 
@@ -28,7 +28,7 @@ const HasSharesActions: React.FC<HasStakeActionProps> = ({ pool, stakingTokenBal
     ? getBalanceNumber(cakeAsBigNumber.multipliedBy(cakePriceBusd), stakingToken.decimals)
     : 0
 
-  const [onPresentTokenRequired] = useModal(<NotEnoughTokensModal tokenSymbol={stakingToken.symbol} />)
+  const [onPresentTokenRequired] = useModal(<NotEnoughLPModal tokenSymbol={stakingToken.symbol} />)
   const [onPresentStake] = useModal(
     <VaultStakeModal stakingMax={stakingTokenBalance} performanceFee={performanceFee} pool={pool} />,
   )

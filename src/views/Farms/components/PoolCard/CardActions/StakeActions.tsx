@@ -5,7 +5,7 @@ import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { DeserializedPool } from 'state/types'
 import Balance from 'components/Balance'
-import NotEnoughTokensModal from '../Modals/NotEnoughTokensModal'
+import NotEnoughLPModal from '../Modals/NotEnoughLPModal'
 import StakeModal from '../Modals/StakeModal'
 
 interface StakeActionsProps {
@@ -33,7 +33,7 @@ const StakeAction: React.FC<StakeActionsProps> = ({
     stakingToken.decimals,
   )
 
-  const [onPresentTokenRequired] = useModal(<NotEnoughTokensModal tokenSymbol={stakingToken.symbol} />)
+  const [onPresentTokenRequired] = useModal(<NotEnoughLPModal tokenSymbol={stakingToken.symbol} />)
 
   const [onPresentStake] = useModal(
     <StakeModal

@@ -3,7 +3,7 @@ import { Flex, Button, useModal, Skeleton } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import { DeserializedPool } from 'state/types'
-import NotEnoughTokensModal from '../../PoolCard/Modals/NotEnoughTokensModal'
+import NotEnoughLPModal from '../../PoolCard/Modals/NotEnoughLPModal'
 import VaultStakeModal from '../VaultStakeModal'
 import HasSharesActions from './HasSharesActions'
 
@@ -24,7 +24,7 @@ const VaultStakeActions: React.FC<VaultStakeActionsProps> = ({
 }) => {
   const { stakingToken } = pool
   const { t } = useTranslation()
-  const [onPresentTokenRequired] = useModal(<NotEnoughTokensModal tokenSymbol={stakingToken.symbol} />)
+  const [onPresentTokenRequired] = useModal(<NotEnoughLPModal tokenSymbol={stakingToken.symbol} />)
   const [onPresentStake] = useModal(
     <VaultStakeModal stakingMax={stakingTokenBalance} pool={pool} performanceFee={performanceFee} />,
   )

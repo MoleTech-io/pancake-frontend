@@ -1,19 +1,14 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
-import styled from 'styled-components'
-import { Modal, Text, Button, OpenNewIcon, Link } from '@pancakeswap/uikit'
+import { Modal, Text, Button } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 
-interface NotEnoughTokensModalProps {
+interface NotEnoughLPModalPropsProps {
   tokenSymbol: string
   onDismiss?: () => void
 }
 
-const StyledLink = styled(Link)`
-  width: 100%;
-`
-
-const NotEnoughLPModal: React.FC<NotEnoughTokensModalProps> = ({ tokenSymbol, onDismiss }) => {
+const NotEnoughLPModalProps: React.FC<NotEnoughLPModalPropsProps> = ({ tokenSymbol, onDismiss }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 
@@ -32,15 +27,9 @@ const NotEnoughLPModal: React.FC<NotEnoughTokensModalProps> = ({ tokenSymbol, on
           symbol: tokenSymbol,
         })}
       </Text>
-      <Button mt="24px" as="a" external href="/swap">
-        {t('Buy')} {tokenSymbol}
+      <Button mt="24px" as="a" external href="/liquidity">
+        {t('Get')} {tokenSymbol}
       </Button>
-      <StyledLink href="https://yieldwatch.net" external>
-        <Button variant="secondary" mt="8px" width="100%">
-          {t('Locate Assets')}
-          <OpenNewIcon color="primary" ml="4px" />
-        </Button>
-      </StyledLink>
       <Button variant="text" onClick={onDismiss}>
         {t('Close Window')}
       </Button>
@@ -48,4 +37,4 @@ const NotEnoughLPModal: React.FC<NotEnoughTokensModalProps> = ({ tokenSymbol, on
   )
 }
 
-export default NotEnoughLPModal
+export default NotEnoughLPModalProps

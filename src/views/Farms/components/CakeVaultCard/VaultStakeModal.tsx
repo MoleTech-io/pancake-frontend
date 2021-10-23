@@ -100,7 +100,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   const annualRoi = interestBreakdown[3] * pool.earningTokenPrice
   const formattedAnnualRoi = formatNumber(annualRoi, annualRoi > 10000 ? 0 : 2, annualRoi > 10000 ? 0 : 2)
 
-  const getTokenLink = stakingToken.address ? `/swap?outputCurrency=${stakingToken.address}` : '/swap'
+  const getTokenLink = '/liquidity'
 
   const handleStakeInputChange = (input: string) => {
     if (input) {

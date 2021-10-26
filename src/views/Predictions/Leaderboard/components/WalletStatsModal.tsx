@@ -21,14 +21,18 @@ import styled from 'styled-components'
 import { getBscScanLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
 import { LeaderboardLoadingState } from 'state/types'
-import { useGetOrFetchLeaderboardAddressResult, useGetLeaderboardLoadingState } from 'state/predictions/hooks'
+import {
+  useGetOrFetchLeaderboardAddressResult,
+  useGetLeaderboardLoadingState,
+  useGetSelectedAddress,
+} from 'state/predictions/hooks'
 import { useTranslation } from 'contexts/Localization'
 import { NetWinnings } from './Results/styles'
 import MobileBetsTable from './MobileBetsTable'
 import DesktopBetsTable from './Results/DesktopBetsTable'
 
 interface WalletStatsModalProps extends InjectedModalProps {
-  account: string
+  account?: string
   onBeforeDismiss?: () => void
 }
 
@@ -43,8 +47,10 @@ const ExternalLink = styled(LinkExternal)`
 const WalletStatsModal: React.FC<WalletStatsModalProps> = ({ account, onDismiss, onBeforeDismiss }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const result = useGetOrFetchLeaderboardAddressResult(account)
-  const profileAvatar = useGetProfileAvatar(account)
+  const selectedAddress = useGetSelectedAddress()
+  const address = account || selectedAddress
+  const result = useGetOrFetchLeaderboardAddressResult(address)
+  const profileAvatar = useGetProfileAvatar(address)
   const leaderboardLoadingState = useGetLeaderboardLoadingState()
   const isLoading = leaderboardLoadingState === LeaderboardLoadingState.LOADING
   const { isDesktop } = useMatchBreakpoints()
@@ -62,7 +68,7 @@ const WalletStatsModal: React.FC<WalletStatsModalProps> = ({ account, onDismiss,
       <ModalHeader background={theme.colors.gradients.bubblegum}>
         <Flex alignItems="center" style={{ flex: 1 }}>
           <Box width={['64px', null, null, null, null, null, '96px']} mr="16px">
-            <ProfileAvatar src={`/images/nfts/${profileAvatar.nft?.images?.md}`} height={96} width={96} />
+            <ProfileAvatar src={profileAvatar.nft?.image?.thumbnail} height={96} width={96} />
           </Box>
           <Box>
             {profileAvatar.username && (
@@ -70,7 +76,7 @@ const WalletStatsModal: React.FC<WalletStatsModalProps> = ({ account, onDismiss,
                 {profileAvatar.username}
               </Heading>
             )}
-            <ExternalLink href={getBscScanLink(account, 'address')}>{truncateHash(account)}</ExternalLink>
+            <ExternalLink href={getBscScanLink(address, 'address')}>{truncateHash(address)}</ExternalLink>
           </Box>
         </Flex>
         <IconButton variant="text" onClick={handleDismiss} aria-label="Close the dialog">
@@ -131,7 +137,7 @@ const WalletStatsModal: React.FC<WalletStatsModalProps> = ({ account, onDismiss,
               {isLoading ? <Skeleton /> : <Text fontWeight="bold">{result?.totalBets?.toLocaleString()}</Text>}
             </Box>
           </Grid>
-          {isDesktop ? <DesktopBetsTable account={account} /> : <MobileBetsTable account={account} />}
+          {isDesktop ? <DesktopBetsTable account={address} /> : <MobileBetsTable account={address} />}
         </Box>
       )}
     </ModalContainer>

@@ -13,7 +13,7 @@ import {
   TranslatableText,
   DeserializedFarmConfig,
 } from 'config/constants/types'
-import { Nft } from 'config/constants/nfts/types'
+import { NftToken, State as NftMarketState } from './nftMarket/types'
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, State, unknown, AnyAction>
 
@@ -96,11 +96,11 @@ export interface Profile {
   userId: number
   points: number
   teamId: number
-  nftAddress: string
+  collectionAddress: string
   tokenId: number
   isActive: boolean
   username: string
-  nft?: Nft
+  nft?: NftToken
   team: Team
   hasRegistered: boolean
 }
@@ -149,6 +149,12 @@ export interface PoolsState {
   userDataLoaded: boolean
 }
 
+export enum ProfileAvatarFetchStatus {
+  NOT_FETCHED = 'not-fetched',
+  FETCHING = 'fetching',
+  FETCHED = 'fetched',
+}
+
 export interface ProfileState {
   isInitialized: boolean
   isLoading: boolean
@@ -157,7 +163,10 @@ export interface ProfileState {
   profileAvatars: {
     [key: string]: {
       username: string
-      nft: Nft
+      nft: NftToken
+      hasRegistered: boolean
+      usernameFetchStatus: ProfileAvatarFetchStatus
+      avatarFetchStatus: ProfileAvatarFetchStatus
     }
   }
 }
@@ -190,8 +199,16 @@ export interface Achievement {
   points: number
 }
 
+export enum AchievementFetchStatus {
+  ERROR = 'error',
+  NOT_FETCHED = 'not-fetched',
+  FETCHING = 'fetching',
+  FETCHED = 'fetched',
+}
+
 export interface AchievementState {
-  data: Achievement[]
+  achievements: Achievement[]
+  achievementFetchStatus: AchievementFetchStatus
 }
 
 // Block
@@ -199,16 +216,6 @@ export interface AchievementState {
 export interface BlockState {
   currentBlock: number
   initialBlock: number
-}
-
-// Collectibles
-
-export interface CollectiblesState {
-  isInitialized: boolean
-  isLoading: boolean
-  data: {
-    [key: string]: number[]
-  }
 }
 
 // Predictions
@@ -392,6 +399,7 @@ export interface PredictionsState {
     [key: string]: boolean
   }
   leaderboard: {
+    selectedAddress: string
     loadingState: LeaderboardLoadingState
     filters: LeaderboardFilter
     skip: number
@@ -572,7 +580,7 @@ export interface State {
   predictions: PredictionsState
   profile: ProfileState
   teams: TeamsState
-  collectibles: CollectiblesState
   voting: VotingState
   lottery: LotteryState
+  nftMarket: NftMarketState
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import every from 'lodash/every'
 import { Stepper, Step, StepStatus, Card, CardBody, Heading, Text, Button, Link, OpenNewIcon } from '@pancakeswap/uikit'
 import { Link as RouterLink } from 'react-router-dom'
+import { useWeb3React } from '@web3-react/core'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import { Ifo } from 'config/constants/types'
 import { WalletIfoData } from 'views/Ifos/types'
@@ -10,6 +11,8 @@ import { useTranslation } from 'contexts/Localization'
 import useTokenBalance from 'hooks/useTokenBalance'
 import Container from 'components/Layout/Container'
 import { useProfile } from 'state/profile/hooks'
+import { nftsBaseUrl } from 'views/Nft/market/constants'
+import ConnectWalletButton from 'components/ConnectWalletButton'
 
 interface Props {
   ifo: Ifo
@@ -32,6 +35,7 @@ const Wrapper = styled(Container)`
 const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
   const { poolBasic, poolUnlimited } = walletIfoData
   const { hasProfile } = useProfile()
+  const { account } = useWeb3React()
   const { t } = useTranslation()
   const { balance } = useTokenBalance(ifo.currency.address)
   const stepsValidationStatus = [
@@ -51,6 +55,27 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
 
   const renderCardBody = (step: number) => {
     const isStepValid = stepsValidationStatus[step]
+
+    const renderAccountStatus = () => {
+      if (!account) {
+        return <ConnectWalletButton />
+      }
+
+      if (isStepValid) {
+        return (
+          <Text color="success" bold>
+            {t('Profile Active!')}
+          </Text>
+        )
+      }
+
+      return (
+        <Button as={RouterLink} to={`${nftsBaseUrl}/profile/${account.toLowerCase()}`}>
+          {t('Activate your Profile')}
+        </Button>
+      )
+    }
+
     switch (step) {
       case 0:
         return (
@@ -61,15 +86,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
             <Text color="textSubtle" small mb="16px">
               {t('You’ll need an active MoleSwap Profile to take part in an IFO!')}
             </Text>
-            {isStepValid ? (
-              <Text color="success" bold>
-                {t('Profile Active!')}
-              </Text>
-            ) : (
-              <Button as={RouterLink} to="/profile">
-                {t('Activate your Profile')}
-              </Button>
-            )}
+            {renderAccountStatus()}
           </CardBody>
         )
       case 1:
@@ -130,8 +147,13 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
       </Heading>
       <Stepper>
         {stepsValidationStatus.map((_, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Step key={index} index={index} status={getStatusProp(index)}>
+          <Step
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            index={index}
+            statusFirstPart={getStatusProp(index)}
+            statusSecondPart={getStatusProp(index + 1)}
+          >
             <Card>{renderCardBody(index)}</Card>
           </Step>
         ))}

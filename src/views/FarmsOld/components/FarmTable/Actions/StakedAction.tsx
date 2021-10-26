@@ -10,6 +10,7 @@ import { useFarmUser, useLpTokenPrice, usePriceCakeBusd } from 'state/farms/hook
 import { fetchFarmUserDataAsync } from 'state/farms'
 import { FarmWithStakedValue } from 'views/FarmsOld/components/FarmCard/FarmCard'
 import { useTranslation } from 'contexts/Localization'
+import useToast from 'hooks/useToast'
 import { useERC20 } from 'hooks/useContract'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import { useAppDispatch } from 'state'
@@ -46,6 +47,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   displayApr,
 }) => {
   const { t } = useTranslation()
+  const { toastError } = useToast()
   const { account } = useWeb3React()
   const [requestedApproval, setRequestedApproval] = useState(false)
   const { allowance, tokenBalance, stakedBalance } = useFarmUser(pid)
@@ -112,12 +114,13 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
       setRequestedApproval(true)
       await onApprove()
       dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
-
-      setRequestedApproval(false)
     } catch (e) {
+      toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       console.error(e)
+    } finally {
+      setRequestedApproval(false)
     }
-  }, [onApprove, dispatch, account, pid])
+  }, [onApprove, dispatch, account, pid, t, toastError])
 
   if (!account) {
     return (
@@ -181,7 +184,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
       <ActionContainer>
         <ActionTitles>
           <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="4px">
-            {t('Stake').toUpperCase()}
+            {t('Stake')}
           </Text>
           <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
             {lpSymbol}

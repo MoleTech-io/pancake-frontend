@@ -25,6 +25,10 @@ import {
   getBunnySpecialPredictionAddress,
   getBunnySpecialLotteryAddress,
   getFarmAuctionAddress,
+  getAnniversaryAchievement,
+  getNftMarketAddress,
+  getNftSaleAddress,
+  getPancakeSquadAddress,
 } from 'utils/addressHelpers'
 
 // ABI
@@ -55,6 +59,11 @@ import bunnySpecialCakeVaultAbi from 'config/abi/bunnySpecialCakeVault.json'
 import bunnySpecialPredictionAbi from 'config/abi/bunnySpecialPrediction.json'
 import bunnySpecialLotteryAbi from 'config/abi/bunnySpecialLottery.json'
 import farmAuctionAbi from 'config/abi/farmAuction.json'
+import anniversaryAchievementAbi from 'config/abi/anniversaryAchievement.json'
+import nftMarketAbi from 'config/abi/nftMarket.json'
+import nftSaleAbi from 'config/abi/nftSale.json'
+import pancakeSquadAbi from 'config/abi/pancakeSquad.json'
+import erc721CollctionAbi from 'config/abi/erc721collection.json'
 import { ChainLinkOracleContract, FarmAuctionContract, PancakeProfileContract, PredictionsContract } from './types'
 
 const getContract = (abi: any, address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
@@ -144,4 +153,19 @@ export const getBunnySpecialLotteryContract = (signer?: ethers.Signer | ethers.p
 }
 export const getFarmAuctionContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
   return getContract(farmAuctionAbi, getFarmAuctionAddress(), signer) as FarmAuctionContract
+}
+export const getAnniversaryAchievementContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(anniversaryAchievementAbi, getAnniversaryAchievement(), signer)
+}
+export const getNftMarketContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(nftMarketAbi, getNftMarketAddress(), signer)
+}
+export const getNftSaleContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(nftSaleAbi, getNftSaleAddress(), signer)
+}
+export const getPancakeSquadContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(pancakeSquadAbi, getPancakeSquadAddress(), signer)
+}
+export const getErc721CollectionContract = (signer?: ethers.Signer | ethers.providers.Provider, address?: string) => {
+  return getContract(erc721CollctionAbi, address, signer)
 }

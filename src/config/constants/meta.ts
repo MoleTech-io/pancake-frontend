@@ -20,6 +20,12 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
     basePath = '/teams'
   } else if (path.startsWith('/voting/proposal') && path !== '/voting/proposal/create') {
     basePath = '/voting/proposal'
+  } else if (path.startsWith('/nfts/collections')) {
+    basePath = '/nfts/collections'
+  } else if (path.startsWith('/nfts/profile')) {
+    basePath = '/nfts/profile'
+  } else if (path.startsWith('/pancake-squad')) {
+    basePath = '/pancake-squad'
   } else {
     basePath = path
   }
@@ -123,6 +129,22 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       return {
         title: `${t('Pools')} | ${t('MoleSwap Info & Analytics')}`,
         description: 'View statistics for Moleswap exchanges.',
+      }
+    case '/nfts':
+      return {
+        title: `${t('Overview')} | ${t('PancakeSwap')}`,
+      }
+    case '/nfts/collections':
+      return {
+        title: `${t('Collections')} | ${t('PancakeSwap')}`,
+      }
+    case '/nfts/profile':
+      return {
+        title: `${t('Your Profile')} | ${t('PancakeSwap')}`,
+      }
+    case '/pancake-squad':
+      return {
+        title: `${t('Pancake Squad')} | ${t('PancakeSwap')}`,
       }
     default:
       return null

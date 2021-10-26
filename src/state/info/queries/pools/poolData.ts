@@ -100,11 +100,11 @@ const fetchPoolData = async (
     return { data, error: false }
   } catch (error) {
     console.error('Failed to fetch pool data', error)
-    return { erro: true }
+    return { error: true }
   }
 }
 
-// Transforms pools into "0xADDRESS: { ...PoolFields }" format and cast strigns to numbers
+// Transforms pools into "0xADDRESS: { ...PoolFields }" format and cast strings to numbers
 const parsePoolData = (pairs?: PoolFields[]) => {
   if (!pairs) {
     return {}

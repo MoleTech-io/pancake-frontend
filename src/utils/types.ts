@@ -44,7 +44,7 @@ export interface PredictionsContract extends Contract {
   rounds: ContractFunction<PredictionsRoundsResponse>
 }
 
-// Chainlink Orance
+// Chainlink Oracle
 export type ChainLinkOracleLatestAnswerResponse = ethers.BigNumber
 
 export interface ChainLinkOracleContract extends Contract {
@@ -107,7 +107,7 @@ export interface FarmAuctionContract extends Contract {
 }
 
 // Profile contract
-// [userId, points, teamId, tokenId, nftAddress isActive]
+// [userId, points, teamId, tokenId, collectionAddress isActive]
 export type GetUserProfileResponse = [
   ethers.BigNumber,
   ethers.BigNumber,

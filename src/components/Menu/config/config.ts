@@ -36,21 +36,21 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
     ],
   },
-  // {
-  //   label: t('Win'),
-  //   href: '/prediction',
-  //   icon: 'Trophy',
-  //   items: [
-  //     {
-  //       label: t('Prediction (BETA)'),
-  //       href: '/prediction',
-  //     },
-  //     {
-  //       label: t('Lottery'),
-  //       href: '/lottery',
-  //     },
-  //   ],
-  // },
+  {
+    label: t('Win'),
+    href: '/prediction',
+    icon: 'Trophy',
+    items: [
+      {
+        label: t('Prediction (BETA)'),
+        href: '/prediction',
+      },
+      {
+        label: t('Lottery'),
+        href: '/lottery',
+      },
+    ],
+  },
   {
     label: t('NFT'),
     href: `${nftsBaseUrl}`,

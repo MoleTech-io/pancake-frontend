@@ -22,6 +22,7 @@ import history from './routerHistory'
 // Views included in the main bundle
 import Pools from './views/Pools'
 import Swap from './views/Swap'
+
 import {
   RedirectDuplicateTokenIds,
   RedirectOldAddLiquidityPathStructure,
@@ -54,6 +55,7 @@ const Info = lazy(() => import('./views/Info'))
 const NftMarket = lazy(() => import('./views/Nft/market'))
 const ProfileCreation = lazy(() => import('./views/ProfileCreation'))
 const PancakeSquad = lazy(() => import('./views/PancakeSquad'))
+const ComingSoon = lazy(() => import('./views/ComingSoon'))
 
 // This config is required for number formatting
 BigNumber.config({
@@ -92,7 +94,8 @@ const App: React.FC = () => {
               <Pools />
             </Route>
             <Route path="/lottery">
-              <Lottery />
+              <ComingSoon />
+              {/* <Lottery /> */}
             </Route>
             <Route path="/ifo">
               <Ifos />
@@ -110,7 +113,8 @@ const App: React.FC = () => {
               <TradingCompetition />
             </Route>
             <Route exact path="/prediction">
-              <Predictions />
+              <ComingSoon />
+              {/* <Predictions /> */}
             </Route>
             <Route path="/prediction/leaderboard">
               <PredictionsLeaderboard />
@@ -127,7 +131,8 @@ const App: React.FC = () => {
 
             {/* NFT */}
             <Route path="/nfts">
-              <NftMarket />
+              <ComingSoon />
+              {/* <NftMarket /> */}
             </Route>
 
             <Route path="/pancake-squad">

@@ -50,6 +50,14 @@ export const mainnetTokens = {
     'MOLE-BUSD LP',
     'https://moletech.io/',
   ),
+  'MOLE-BNB': new Token(
+    MAINNET,
+    '0x6b84C841a31841859E566935D0c54A007a016e8E',
+    18,
+    'MOLE-BNB LP',
+    'MOLE-BNB LP',
+    'https://moletech.io/',
+  ),
   mole: new Token(
     MAINNET,
     '0x33831Bee1CE63c95dAb6Cf23F83fF0B6A29a2837',

@@ -54,6 +54,22 @@ const pools: SerializedPoolConfig[] = [
     isUnlimited: true,
   },
   {
+    sousId: 3,
+    stakingToken: serializedTokens['MOLE-BNB'],
+    earningToken: serializedTokens.cake,
+    contractAddress: {
+      97: '',
+      56: '0x925Bbd7bE5dA8C3DBc0d4870be429fFcf166C969',
+    },
+    poolCategory: PoolCategory.CORE,
+    harvest: true,
+    sortOrder: 3,
+    tokenPerBlock: '0.0002',
+    isFinished: false,
+    isLp: true,
+    isUnlimited: true,
+  },
+  {
       sousId: 220,
       stakingToken: serializedTokens['MOLE-BUSD'],
       earningToken: serializedTokens.mole,

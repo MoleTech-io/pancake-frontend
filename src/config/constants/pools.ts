@@ -119,6 +119,22 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isUnlimited: false,
     },
+    {
+      sousId: 222,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.ghc,
+      contractAddress: {
+        97: '0xDB43E38c9494964DAe95ad6A26079de3128b06a7',
+        56: '0xDB43E38c9494964DAe95ad6A26079de3128b06a7',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '48222',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isUnlimited: false,
+    },
 ]
 
 export default pools

@@ -74,6 +74,14 @@ export const mainnetTokens = {
     'TOO Token',
     'https://toocoin.vip/',
   ),
+  ghc: new Token(
+    MAINNET,
+    '0x683fae4411249ca05243dfb919c20920f3f5bfe0',
+    18,
+    'GHC',
+    'Galaxy Heroes Coin',
+    'https://www.galaxyheroescoin.com/',
+  ),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1779,6 +1787,7 @@ export const testnetTokens = {
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
   ),
+
 }
 
 const tokens = (): TokenList => {

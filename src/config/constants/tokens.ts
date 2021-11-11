@@ -74,6 +74,30 @@ export const mainnetTokens = {
     'TOO Token',
     'https://toocoin.vip/',
   ),
+  maca: new Token(
+    MAINNET,
+    '0x11209308Df88bb6252899B165Ab3CEDCd2C07cA3',
+    18,
+    'mACA',
+    'mACA 700DOT crowdloan',
+    'https://moletech.io/',
+  ),
+  mglmr: new Token(
+    MAINNET,
+    '0x3890bd57506a620936fCAB8aD711270606F1A9d6',
+    18,
+    'mGLMR',
+    'mGLMR 700DOT crowdloan',
+    'https://moletech.io/',
+  ),
+  mastr: new Token(
+    MAINNET,
+    '0x7fCDDC246746dbaf9661878F0a203E947C0C762e',
+    18,
+    'mASTR',
+    'mASTR 100DOT crowdloan',
+    'https://moletech.io/',
+  ),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1779,6 +1803,7 @@ export const testnetTokens = {
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
   ),
+
 }
 
 const tokens = (): TokenList => {

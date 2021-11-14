@@ -34,7 +34,8 @@ import { getBaseNftFields, getBaseTransactionFields, getCollectionBaseFields } f
  * @returns
  */
 export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
-  const res = await fetch(`${API_NFT}/collections`)
+  // to do
+  const res = await fetch('http://localhost:3001/api/v1/collections')
   if (res.ok) {
     const json = await res.json()
     return json.data
@@ -49,6 +50,7 @@ export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
  */
 export const getCollectionApi = async (collectionAddress: string): Promise<ApiCollection> => {
   const res = await fetch(`${API_NFT}/collections/${collectionAddress}`)
+  console.log('### getCollectionApi ###', `${API_NFT}/collections/${collectionAddress}`)
   if (res.ok) {
     const json = await res.json()
     return json.data

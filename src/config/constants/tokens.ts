@@ -98,6 +98,14 @@ export const mainnetTokens = {
     'mASTR 100DOT crowdloan',
     'https://moletech.io/',
   ),
+  mpara: new Token(
+    MAINNET,
+    '0x2e3222512b4d0500dc09E0b95fC4650f3Ee821Ea',
+    18,
+    'mPARA',
+    'mPARA 150DOT crowdloan',
+    'https://moletech.io/',
+  ),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',

@@ -208,6 +208,18 @@ const campaigns: Campaign[] = [
     description: 'Joined PancakeSwap during the first year of our journey!',
     badge: '1-year.svg',
   },
+  {
+    id: '511120000',
+    type: 'ifo',
+    title: 'Duelist King',
+    badge: 'ifo-dkt.svg',
+  },
+  {
+    id: '511130000',
+    type: 'ifo',
+    title: 'Mines of Dalarnia',
+    badge: 'ifo-dar.svg',
+  },
 ]
 
 /**

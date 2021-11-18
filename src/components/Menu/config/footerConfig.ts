@@ -10,6 +10,10 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
         href: 'https://moletech.io/#section13',
       },
       {
+        label: t('Brand'),
+        href: 'https://docs.pancakeswap.finance/brand',
+      },
+      {
         label: t('Blog'),
         href: 'https://insightcj.com',
       },

@@ -34,7 +34,7 @@ import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
 const Home = lazy(() => import('./views/Home'))
-const Farms = lazy(() => import('./views/Farms'))
+const Farms = lazy(() => import('./views/FarmsNew'))
 const FarmAuction = lazy(() => import('./views/FarmAuction'))
 const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
@@ -131,11 +131,10 @@ const App: React.FC = () => {
 
             {/* NFT */}
             <Route path="/nfts">
-              <ComingSoon />
-              {/* <NftMarket /> */}
+              <NftMarket />
             </Route>
 
-            <Route path="/pancake-squad">
+            <Route path="/insight-squad">
               <PancakeSquad />
             </Route>
 

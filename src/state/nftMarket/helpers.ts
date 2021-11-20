@@ -34,7 +34,7 @@ import { getBaseNftFields, getBaseTransactionFields, getCollectionBaseFields } f
  * @returns
  */
 export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
-  const res = await fetch(`${API_NFT}/collections`)
+  const res = await fetch(`http://localhost:3001/api/v1/collections`)
   if (res.ok) {
     const json = await res.json()
     return json.data
@@ -48,7 +48,7 @@ export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
  * @returns
  */
 export const getCollectionApi = async (collectionAddress: string): Promise<ApiCollection> => {
-  const res = await fetch(`${API_NFT}/collections/${collectionAddress}`)
+  const res = await fetch(`http://localhost:3001/api/v1/collections/${collectionAddress}`)
   if (res.ok) {
     const json = await res.json()
     return json.data
@@ -70,13 +70,15 @@ export const getNftsFromCollectionApi = async (
   page = 1,
 ): Promise<ApiResponseCollectionTokens> => {
   const isPBCollection = collectionAddress.toLowerCase() === pancakeBunniesAddress.toLowerCase()
-  const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
+  // const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
+  const requestPath = `http://localhost:3001/api/v1/collections/${collectionAddress}/tokens${
     !isPBCollection ? `?page=${page}&size=${size}` : ``
   }`
-
+  console.log('requestPath', requestPath);
   const res = await fetch(requestPath)
   if (res.ok) {
     const data = await res.json()
+    console.log(data);
     return data
   }
   console.error(`API: Failed to fetch NFT tokens for ${collectionAddress} collection`, res.statusText)
@@ -93,9 +95,12 @@ export const getNftApi = async (
   collectionAddress: string,
   tokenId: string,
 ): Promise<ApiResponseSpecificToken['data']> => {
-  const res = await fetch(`${API_NFT}/collections/${collectionAddress}/tokens/${tokenId}`)
+  // const res = await fetch(`${API_NFT}/collections/${collectionAddress}/tokens/${tokenId}`)
+  const res = await fetch(`http://localhost:3001/api/v1/collections/${collectionAddress}/tokens/${tokenId}`)
+  console.log(`http://localhost:3001/api/v1/collections/${collectionAddress}/tokens/${tokenId}`);
   if (res.ok) {
     const json = await res.json()
+    console.log(`http://localhost:3001/api/v1/collections/${collectionAddress}/tokens/${tokenId}`,json);
     return json.data
   }
 
@@ -144,7 +149,7 @@ export const getNftsFromDifferentCollectionsApi = async (
 export const getCollectionSg = async (collectionAddress: string): Promise<CollectionMarketDataBaseFields> => {
   try {
     const res = await request(
-      GRAPH_API_NFTMARKET,
+      'http://localhost:3001/api/v1/market/collection',
       gql`
         query getCollectionData($collectionAddress: String!) {
           collection(id: $collectionAddress) {
@@ -154,6 +159,7 @@ export const getCollectionSg = async (collectionAddress: string): Promise<Collec
       `,
       { collectionAddress: collectionAddress.toLowerCase() },
     )
+    console.log(res, 'da kk (((((((77777getCollectionSg');
     return res.collection
   } catch (error) {
     console.error('Failed to fetch collection', error)
@@ -168,7 +174,7 @@ export const getCollectionSg = async (collectionAddress: string): Promise<Collec
 export const getCollectionsSg = async (): Promise<CollectionMarketDataBaseFields[]> => {
   try {
     const res = await request(
-      GRAPH_API_NFTMARKET,
+      'http://localhost:3001/api/v1/market/collections',
       gql`
         {
           collections {
@@ -177,6 +183,7 @@ export const getCollectionsSg = async (): Promise<CollectionMarketDataBaseFields
         }
       `,
     )
+    console.log(res, 'xiao kk getCollectionsSg');
     return res.collections
   } catch (error) {
     console.error('Failed to fetch NFT collections', error)
@@ -214,6 +221,7 @@ export const getNftsFromCollectionSg = async (
       `,
       { collectionAddress: collectionAddress.toLowerCase(), skip, first },
     )
+    console.log(res.collection, '#### 44444  getNftsFromCollectionSg');
     return res.collection.nfts
   } catch (error) {
     console.error('Failed to fetch NFTs from collection', error)

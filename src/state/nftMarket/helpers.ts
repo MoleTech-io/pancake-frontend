@@ -506,9 +506,10 @@ export const fetchNftsFiltered = async (
   filters: Record<string, string | number>,
 ): Promise<ApiTokenFilterResponse> => {
   const res = await fetch(`${API_NFT}/collections/${collectionAddress}/filter?${stringify(filters)}`)
-
+  console.log(`${API_NFT}/collections/${collectionAddress}/filter?${stringify(filters)}`)
   if (res.ok) {
     const data = await res.json()
+    console.log(data)
     return data
   }
 
@@ -822,8 +823,10 @@ export const getCompleteAccountNftData = async (
  */
 export const getCollectionDistributionApi = async <T>(collectionAddress: string): Promise<T> => {
   const res = await fetch(`${API_NFT}/collections/${collectionAddress}/distribution`)
+  console.log(`${API_NFT}/collections/${collectionAddress}/distribution`)
   if (res.ok) {
     const data = await res.json()
+    console.log(data);
     return data
   }
   console.error(`API: Failed to fetch NFT collection ${collectionAddress} distribution`, res.statusText)

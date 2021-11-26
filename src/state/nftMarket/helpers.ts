@@ -98,6 +98,7 @@ export const getNftApi = async (
   const res = await fetch(`http://api.moletech.io:7080/api/v1/collections/${collectionAddress}/tokens/${tokenId}`)
   if (res.ok) {
     const json = await res.json()
+    console.log(`http://localhost:3001/api/v1/collections/${collectionAddress}/tokens/${tokenId}`,json);
     return json.data
   }
 
@@ -146,7 +147,7 @@ export const getNftsFromDifferentCollectionsApi = async (
 export const getCollectionSg = async (collectionAddress: string): Promise<CollectionMarketDataBaseFields> => {
   try {
     const res = await request(
-      GRAPH_API_NFTMARKET,
+      'http://localhost:3001/api/v1/market/collection',
       gql`
         query getCollectionData($collectionAddress: String!) {
           collection(id: $collectionAddress) {
@@ -171,7 +172,7 @@ export const getCollectionSg = async (collectionAddress: string): Promise<Collec
 export const getCollectionsSg = async (): Promise<CollectionMarketDataBaseFields[]> => {
   try {
     const res = await request(
-      GRAPH_API_NFTMARKET,
+      'http://localhost:3001/api/v1/market/collections',
       gql`
         {
           collections {

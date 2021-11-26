@@ -80,8 +80,11 @@ export const useGetCollections = () => {
 }
 
 export const useGetCollection = (collectionAddress: string) => {
+
   const checksummedCollectionAddress = isAddress(collectionAddress) || ''
   const collections = useGetCollections()
+  console.log("collections ## ", collections)
+  console.log("checksummedCollectionAddress ##", checksummedCollectionAddress)
   return collections[checksummedCollectionAddress]
 }
 

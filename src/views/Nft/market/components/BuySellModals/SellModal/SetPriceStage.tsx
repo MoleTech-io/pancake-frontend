@@ -39,6 +39,7 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
 
   const { creatorFee, tradingFee } = useGetCollection(nftToSell.collectionAddress)
   const creatorFeeAsNumber = parseFloat(creatorFee)
+  console.log("########## creator fee  ###########", creatorFeeAsNumber)
   const tradingFeeAsNumber = parseFloat(tradingFee)
   const bnbPrice = useBNBBusdPrice()
   const priceAsFloat = parseFloat(price)
@@ -88,7 +89,7 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
         <Flex>
           <Flex flex="1" alignItems="center">
             <BinanceIcon width={24} height={24} mr="4px" />
-            <Text bold>WBNB</Text>
+            <Text bold>MOLE</Text>
           </Flex>
           <Flex flex="2">
             <RightAlignedInput

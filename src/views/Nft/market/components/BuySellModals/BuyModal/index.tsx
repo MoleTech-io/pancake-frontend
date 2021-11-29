@@ -45,7 +45,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   const { callWithGasPrice } = useCallWithGasPrice()
 
   const { account } = useWeb3React()
-  const wbnbContract = useERC20(tokens.wbnb.address)
+  const wbnbContract = useERC20(tokens.mole.address)
   const nftMarketContract = useNftMarketContract()
 
   const { toastSuccess } = useToast()
@@ -57,8 +57,8 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   // BNB - returns ethers.BigNumber
   const { balance: bnbBalance, fetchStatus: bnbFetchStatus } = useGetBnbBalance()
   const formattedBnbBalance = parseFloat(formatEther(bnbBalance))
-  // WBNB - returns BigNumber
-  const { balance: wbnbBalance, fetchStatus: wbnbFetchStatus } = useTokenBalance(tokens.wbnb.address)
+  // MOLE - returns BigNumber
+  const { balance: wbnbBalance, fetchStatus: wbnbFetchStatus } = useTokenBalance(tokens.mole.address)
   const formattedWbnbBalance = getBalanceNumber(wbnbBalance)
 
   const walletBalance = paymentCurrency === PaymentCurrency.BNB ? formattedBnbBalance : formattedWbnbBalance
@@ -71,7 +71,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
 
   useEffect(() => {
     if (bnbBalance.lt(nftPriceWei) && wbnbBalance.gte(ethersToBigNumber(nftPriceWei)) && !isPaymentCurrentInitialized) {
-      setPaymentCurrency(PaymentCurrency.WBNB)
+      setPaymentCurrency(PaymentCurrency.MOLE)
       setIsPaymentCurrentInitialized(true)
     }
   }, [bnbBalance, wbnbBalance, nftPriceWei, isPaymentCurrentInitialized])
@@ -90,7 +90,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
     },
     onApproveSuccess: async ({ receipt }) => {
       toastSuccess(
-        t('Contract approved - you can now buy NFT with WBNB!'),
+        t('Contract approved - you can now buy NFT with MOLE!'),
         <ToastDescriptionWithTx txHash={receipt.transactionHash} />,
       )
     },
@@ -127,7 +127,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   })
 
   const continueToNextStage = () => {
-    if (paymentCurrency === PaymentCurrency.WBNB && !isApproved) {
+    if (paymentCurrency === PaymentCurrency.MOLE && !isApproved) {
       setStage(BuyingStage.APPROVE_AND_CONFIRM)
     } else {
       setStage(BuyingStage.CONFIRM)

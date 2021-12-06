@@ -2,8 +2,8 @@ import React from 'react'
 import { Flex, MoleIcon, Text } from '@pancakeswap/uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
 
-const ActivityPrice = ({ bnbBusdPrice, price }) => {
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, price)
+const ActivityPrice = ({ moleBusdPrice, price }) => {
+  const priceInUsd = multiplyPriceByAmount(moleBusdPrice, price)
 
   return (
     <Flex flexDirection="column" alignItems="flex-end">

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { Flex, Grid, Box, Text, Button, MoleIcon, ErrorIcon, useTooltip } from '@pancakeswap/uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'
 import { useGetCollection } from 'state/nftMarket/hooks'
 import { Divider } from '../shared/styles'
-import { GreyedOutContainer, BnbAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
+import { GreyedOutContainer, MoleAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
 
 interface SetPriceStageProps {
   nftToSell: NftToken
@@ -41,9 +41,9 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
   const creatorFeeAsNumber = parseFloat(creatorFee)
   console.log("########## creator fee  ###########", creatorFeeAsNumber)
   const tradingFeeAsNumber = parseFloat(tradingFee)
-  const bnbPrice = useBNBBusdPrice()
+  const molePrice = useMoleBusdPrice()
   const priceAsFloat = parseFloat(price)
-  const priceInUsd = multiplyPriceByAmount(bnbPrice, priceAsFloat)
+  const priceInUsd = multiplyPriceByAmount(molePrice, priceAsFloat)
 
   const priceIsOutOfRange = priceAsFloat > MAX_PRICE || priceAsFloat < MIN_PRICE
 
@@ -140,7 +140,7 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
             <Text small color="textSubtle">
               {t('Lowest price on market')}
             </Text>
-            <BnbAmountCell bnbAmount={lowestPrice} />
+            <MoleAmountCell bnbAmount={lowestPrice} />
           </Flex>
         )}
       </GreyedOutContainer>

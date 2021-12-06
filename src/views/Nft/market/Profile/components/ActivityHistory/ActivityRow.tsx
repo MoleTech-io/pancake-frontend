@@ -20,10 +20,10 @@ const RoundedImage = styled(Image)`
 interface ActivityRowProps {
   activity: Activity
   nft: NftToken
-  bnbBusdPrice: Price
+  moleBusdPrice: Price
 }
 
-const ActivityRow: React.FC<ActivityRowProps> = ({ activity, bnbBusdPrice, nft }) => {
+const ActivityRow: React.FC<ActivityRowProps> = ({ activity, moleBusdPrice, nft }) => {
   const { chainId } = useActiveWeb3React()
   const { isXs, isSm } = useMatchBreakpoints()
   const priceAsFloat = parseFloat(activity.price)
@@ -36,7 +36,7 @@ const ActivityRow: React.FC<ActivityRowProps> = ({ activity, bnbBusdPrice, nft }
     minute: 'numeric',
   })
   const [onPresentMobileModal] = useModal(
-    <MobileModal nft={nft} activity={activity} localeTimestamp={localeTimestamp} bnbBusdPrice={bnbBusdPrice} />,
+    <MobileModal nft={nft} activity={activity} localeTimestamp={localeTimestamp} moleBusdPrice={moleBusdPrice} />,
   )
 
   return (
@@ -65,12 +65,12 @@ const ActivityRow: React.FC<ActivityRowProps> = ({ activity, bnbBusdPrice, nft }
         <Flex alignItems="center" justifyContent="flex-end">
           <ActivityEventText marketEvent={activity.marketEvent} />
         </Flex>
-        {isXs || isSm ? <ActivityPrice price={priceAsFloat} bnbBusdPrice={bnbBusdPrice} /> : null}
+        {isXs || isSm ? <ActivityPrice price={priceAsFloat} moleBusdPrice={moleBusdPrice} /> : null}
       </Td>
       {isXs || isSm ? null : (
         <>
           <Td>
-            <ActivityPrice price={priceAsFloat} bnbBusdPrice={bnbBusdPrice} />
+            <ActivityPrice price={priceAsFloat} moleBusdPrice={moleBusdPrice} />
           </Td>
           <Td>
             <Flex justifyContent="flex-end" alignItems="center">

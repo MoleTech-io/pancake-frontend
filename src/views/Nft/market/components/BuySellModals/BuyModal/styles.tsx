@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Modal, Grid, Flex, Text, MoleIcon, Skeleton } from '@pancakeswap/uikit'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { BuyingStage } from './types'
 
@@ -33,14 +33,14 @@ export const BorderedBox = styled(Grid)`
   grid-row-gap: 8px;
 `
 
-interface BnbAmountCellProps {
+interface MoleAmountCellProps {
   bnbAmount: number
   isLoading?: boolean
   isInsufficient?: boolean
 }
 
-export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount, isLoading, isInsufficient }) => {
-  const bnbBusdPrice = useBNBBusdPrice()
+export const MoleAmountCell: React.FC<MoleAmountCellProps> = ({ bnbAmount, isLoading, isInsufficient }) => {
+  const moleBusdPrice = useMoleBusdPrice()
   if (isLoading) {
     return (
       <Flex flexDirection="column" justifySelf="flex-end">
@@ -49,7 +49,7 @@ export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount, isLoadi
       </Flex>
     )
   }
-  const usdAmount = multiplyPriceByAmount(bnbBusdPrice, bnbAmount)
+  const usdAmount = multiplyPriceByAmount(moleBusdPrice, bnbAmount)
   return (
     <Flex justifySelf="flex-end" flexDirection="column">
       <Flex justifyContent="flex-end">

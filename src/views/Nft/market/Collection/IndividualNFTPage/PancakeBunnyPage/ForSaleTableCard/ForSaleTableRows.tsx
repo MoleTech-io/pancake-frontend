@@ -6,7 +6,7 @@ import { Button, Grid, Text, Flex, Box, MoleIcon, useModal, Skeleton } from '@pa
 import { formatNumber } from 'utils/formatBalance'
 import { ContextApi } from 'contexts/Localization/types'
 import { useTranslation } from 'contexts/Localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { NftToken } from 'state/nftMarket/types'
 import BuyModal from 'views/Nft/market/components/BuySellModals/BuyModal'
@@ -27,12 +27,12 @@ const OwnersTableRow = styled(Grid)`
 interface RowProps {
   t: ContextApi['t']
   nft: NftToken
-  bnbBusdPrice: Price
+  moleBusdPrice: Price
   account: string
 }
 
-const Row: React.FC<RowProps> = ({ t, nft, bnbBusdPrice, account }) => {
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, parseFloat(nft.marketData.currentAskPrice))
+const Row: React.FC<RowProps> = ({ t, nft, moleBusdPrice, account }) => {
+  const priceInUsd = multiplyPriceByAmount(moleBusdPrice, parseFloat(nft.marketData.currentAskPrice))
 
   const ownNft = account ? nft.marketData.currentSeller === account.toLowerCase() : false
   const [onPresentBuyModal] = useModal(<BuyModal nftToBuy={nft} />)
@@ -45,7 +45,7 @@ const Row: React.FC<RowProps> = ({ t, nft, bnbBusdPrice, account }) => {
           <MoleIcon width="24px" height="24px" mr="8px" />
           <Text bold>{formatNumber(parseFloat(nft.marketData.currentAskPrice), 0, 3)}</Text>
         </Flex>
-        {bnbBusdPrice ? (
+        {moleBusdPrice ? (
           <Text fontSize="12px" color="textSubtle">
             {`(~${formatNumber(priceInUsd, 2, 2)} USD)`}
           </Text>
@@ -80,11 +80,11 @@ interface ForSaleTableRowsProps {
 const ForSaleTableRow: React.FC<ForSaleTableRowsProps> = ({ nftsForSale }) => {
   const { account } = useWeb3React()
   const { t } = useTranslation()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const moleBusdPrice = useMoleBusdPrice()
   return (
     <OwnersTableRow>
       {nftsForSale.map((nft) => (
-        <Row key={nft.tokenId} t={t} nft={nft} bnbBusdPrice={bnbBusdPrice} account={account} />
+        <Row key={nft.tokenId} t={t} nft={nft} moleBusdPrice={moleBusdPrice} account={account} />
       ))}
     </OwnersTableRow>
   )

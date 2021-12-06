@@ -8,7 +8,7 @@ import { BASE_URL } from 'config'
 import { NftToken } from 'state/nftMarket/types'
 import { getBscScanLinkForNft } from 'utils'
 import { Divider, RoundedImage } from '../shared/styles'
-import { BorderedBox, BnbAmountCell } from './styles'
+import { BorderedBox, MoleAmountCell } from './styles'
 import { PaymentCurrency } from './types'
 
 interface ReviewStageProps {
@@ -66,7 +66,12 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
           <Text small color="textSubtle">
             {t('Pay with')}
           </Text>
-          <ButtonMenu
+          <Flex justifySelf="flex-end">
+          <Text small color="textSubtle">
+            {t('MOLE')}
+          </Text>
+          </Flex>
+          {/* <ButtonMenu
             activeIndex={paymentCurrency}
             onItemClick={(index) => setPaymentCurrency(index)}
             scale="sm"
@@ -74,20 +79,21 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
           >
             <ButtonMenuItem>BNB</ButtonMenuItem>
             <ButtonMenuItem>MOLE</ButtonMenuItem>
-          </ButtonMenu>
+          </ButtonMenu> */}
+        
           <Text small color="textSubtle">
             {t('Total payment')}
           </Text>
-          <BnbAmountCell bnbAmount={nftPrice} />
+          <MoleAmountCell bnbAmount={nftPrice} />
           <Text small color="textSubtle">
-            {t('%symbol% in wallet', { symbol: paymentCurrency === PaymentCurrency.BNB ? 'BNB' : 'MOLE' })}
+            {t('MOLE in wallet')}
           </Text>
           {!account ? (
             <Flex justifySelf="flex-end">
               <ConnectWalletButton scale="sm" />
             </Flex>
           ) : (
-            <BnbAmountCell
+            <MoleAmountCell
               bnbAmount={walletBalance}
               isLoading={walletFetchStatus !== FetchStatus.SUCCESS}
               isInsufficient={walletFetchStatus === FetchStatus.SUCCESS && notEnoughBnbForPurchase}
@@ -97,9 +103,7 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
         {walletFetchStatus === FetchStatus.SUCCESS && notEnoughBnbForPurchase && (
           <Message p="8px" variant="danger">
             <Text>
-              {t('Not enough %symbol% to purchase this NFT', {
-                symbol: paymentCurrency === PaymentCurrency.BNB ? 'BNB' : 'MOLE',
-              })}
+              {t('Not enough MOLE to purchase this NFT')}
             </Text>
           </Message>
         )}

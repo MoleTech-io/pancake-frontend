@@ -9,7 +9,7 @@ import { ArrowBackIcon, ArrowForwardIcon, Card, Flex, Table, Text, Th, useMatchB
 import { getNftsFromDifferentCollectionsApi, getUserActivity } from 'state/nftMarket/helpers'
 import { NftToken, TokenIdWithCollectionAddress, UserNftInitializationState } from 'state/nftMarket/types'
 import { useTranslation } from 'contexts/Localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import useTheme from 'hooks/useTheme'
 import { useParams } from 'react-router'
 import { Activity, sortUserActivity } from '../../utils/sortUserActivity'
@@ -33,7 +33,7 @@ const ActivityHistory = () => {
   const [sortedUserActivities, setSortedUserActivities] = useState<Activity[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const { activity: userActivity } = useUserNfts()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const moleBusdPrice = useMoleBusdPrice()
   const { isXs, isSm } = useMatchBreakpoints()
 
   useEffect(() => {
@@ -153,7 +153,7 @@ const ActivityHistory = () => {
                       key={`${activity.nft.tokenId}${activity.timestamp}`}
                       activity={activity}
                       nft={nftMeta}
-                      bnbBusdPrice={bnbBusdPrice}
+                      moleBusdPrice={moleBusdPrice}
                     />
                   )
                 })

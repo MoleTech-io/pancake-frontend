@@ -38,7 +38,7 @@ interface BuyModalProps extends InjectedModalProps {
 const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   const [stage, setStage] = useState(BuyingStage.REVIEW)
   const [confirmedTxHash, setConfirmedTxHash] = useState('')
-  const [paymentCurrency, setPaymentCurrency] = useState<PaymentCurrency>(PaymentCurrency.BNB)
+  const [paymentCurrency, setPaymentCurrency] = useState<PaymentCurrency>(PaymentCurrency.MOLE)
   const [isPaymentCurrentInitialized, setIsPaymentCurrentInitialized] = useState(false)
   const { theme } = useTheme()
   const { t } = useTranslation()
@@ -53,28 +53,18 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
 
   const nftPriceWei = parseUnits(nftToBuy.marketData.currentAskPrice, 'ether')
   const nftPrice = parseFloat(nftToBuy.marketData.currentAskPrice)
+  const { balance: moleBalance, fetchStatus: wbnbFetchStatus } = useTokenBalance(tokens.mole.address)
+  const formattedMoleBalance = getBalanceNumber(moleBalance)
 
-  // BNB - returns ethers.BigNumber
-  const { balance: bnbBalance, fetchStatus: bnbFetchStatus } = useGetBnbBalance()
-  const formattedBnbBalance = parseFloat(formatEther(bnbBalance))
-  // MOLE - returns BigNumber
-  const { balance: wbnbBalance, fetchStatus: wbnbFetchStatus } = useTokenBalance(tokens.mole.address)
-  const formattedWbnbBalance = getBalanceNumber(wbnbBalance)
+  const walletBalance = formattedMoleBalance
+  const walletFetchStatus = wbnbFetchStatus
 
-  const walletBalance = paymentCurrency === PaymentCurrency.BNB ? formattedBnbBalance : formattedWbnbBalance
-  const walletFetchStatus = paymentCurrency === PaymentCurrency.BNB ? bnbFetchStatus : wbnbFetchStatus
-
-  const notEnoughBnbForPurchase =
-    paymentCurrency === PaymentCurrency.BNB
-      ? bnbBalance.lt(nftPriceWei)
-      : wbnbBalance.lt(ethersToBigNumber(nftPriceWei))
+  const notEnoughBnbForPurchase = moleBalance.lt(ethersToBigNumber(nftPriceWei))
 
   useEffect(() => {
-    if (bnbBalance.lt(nftPriceWei) && wbnbBalance.gte(ethersToBigNumber(nftPriceWei)) && !isPaymentCurrentInitialized) {
       setPaymentCurrency(PaymentCurrency.MOLE)
       setIsPaymentCurrentInitialized(true)
-    }
-  }, [bnbBalance, wbnbBalance, nftPriceWei, isPaymentCurrentInitialized])
+  }, [moleBalance, moleBalance, nftPriceWei, isPaymentCurrentInitialized])
 
   const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm } = useApproveConfirmTransaction({
     onRequiresApproval: async () => {
@@ -98,11 +88,6 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
       const payAmount = Number.isNaN(nftPrice)
         ? ethers.BigNumber.from(0)
         : parseUnits(nftToBuy.marketData.currentAskPrice)
-      if (paymentCurrency === PaymentCurrency.BNB) {
-        return callWithGasPrice(nftMarketContract, 'buyTokenUsingBNB', [nftToBuy.collectionAddress, nftToBuy.tokenId], {
-          value: payAmount,
-        })
-      }
       return callWithGasPrice(nftMarketContract, 'buyTokenUsingWBNB', [
         nftToBuy.collectionAddress,
         nftToBuy.tokenId,

@@ -34,9 +34,10 @@ import { getBaseNftFields, getBaseTransactionFields, getCollectionBaseFields } f
  * @returns
  */
 export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
-  const res = await fetch(`http://api.moletech.io:7080/api/v1/collections`)
+  const res = await fetch(`${API_NFT}/collections`)
   if (res.ok) {
     const json = await res.json()
+    console.log('getCollectionsApi: ##',json.data)
     return json.data
   }
   console.error('Failed to fetch NFT collections', res.statusText)
@@ -48,9 +49,10 @@ export const getCollectionsApi = async (): Promise<ApiCollection[]> => {
  * @returns
  */
 export const getCollectionApi = async (collectionAddress: string): Promise<ApiCollection> => {
-  const res = await fetch(`http://api.moletech.io:7080/api/v1/collections/${collectionAddress}`)
+  const res = await fetch(`${API_NFT}/collections/${collectionAddress}`)
   if (res.ok) {
     const json = await res.json()
+    console.log('getCollectionApi: ##', `${API_NFT}/collections/${collectionAddress}`,json.data)
     return json.data
   }
   console.error(`API: Failed to fetch NFT collection ${collectionAddress}`, res.statusText)
@@ -70,15 +72,15 @@ export const getNftsFromCollectionApi = async (
   page = 1,
 ): Promise<ApiResponseCollectionTokens> => {
   const isPBCollection = collectionAddress.toLowerCase() === pancakeBunniesAddress.toLowerCase()
+  const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
   // const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
-  const requestPath = `http://api.moletech.io:7080/api/v1/collections/${collectionAddress}/tokens${
     !isPBCollection ? `?page=${page}&size=${size}` : ``
   }`
   console.log('requestPath', requestPath);
   const res = await fetch(requestPath)
   if (res.ok) {
     const data = await res.json()
-    console.log(data);
+    console.log('getNftsFromCollectionApi: ##', requestPath, data)
     return data
   }
   console.error(`API: Failed to fetch NFT tokens for ${collectionAddress} collection`, res.statusText)
@@ -95,9 +97,10 @@ export const getNftApi = async (
   collectionAddress: string,
   tokenId: string,
 ): Promise<ApiResponseSpecificToken['data']> => {
-  const res = await fetch(`http://api.moletech.io:7080/api/v1/collections/${collectionAddress}/tokens/${tokenId}`)
+  const res = await fetch(`${API_NFT}/collections/${collectionAddress}/tokens/${tokenId}`)
   if (res.ok) {
     const json = await res.json()
+    console.log('getNftApi: ##',`${API_NFT}/collections/${collectionAddress}/tokens/${tokenId}`, json.data)
     return json.data
   }
 
@@ -517,6 +520,7 @@ export const fetchNftsFiltered = async (
 
   if (res.ok) {
     const data = await res.json()
+    console.log('fetchNftsFiltered: ##', `${API_NFT}/collections/${collectionAddress}/filter?${stringify(filters)}`, data)
     return data
   }
 
@@ -829,9 +833,10 @@ export const getCompleteAccountNftData = async (
  * @returns
  */
 export const getCollectionDistributionApi = async <T>(collectionAddress: string): Promise<T> => {
-  const res = await fetch(`http://api.moletech.io:7080/api/v1/collections/${collectionAddress}/distribution`)
+  const res = await fetch(`${API_NFT}/collections/${collectionAddress}/distribution`)
   if (res.ok) {
     const data = await res.json()
+    console.log('fetchNftsFiltered: ##', `${API_NFT}/collections/${collectionAddress}/distribution`, data)
     return data
   }
   console.error(`API: Failed to fetch NFT collection ${collectionAddress} distribution`, res.statusText)

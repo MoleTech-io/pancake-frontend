@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Card, CardBody, Text, Button, BinanceIcon, Skeleton, useModal } from '@pancakeswap/uikit'
+import { Flex, Box, Card, CardBody, Text, Button, MoleIcon, Skeleton, useModal } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { NftToken } from 'state/nftMarket/types'
@@ -72,7 +72,7 @@ const MainNFTCard: React.FC<MainNFTCardProps> = ({ nft, isOwnNft, nftIsProfilePi
               </Text>
               {currentAskPriceAsNumber > 0 ? (
                 <Flex alignItems="center" mt="8px">
-                  <BinanceIcon width={18} height={18} mr="4px" />
+                  <MoleIcon width={18} height={18} mr="4px" />
                   <Text fontSize="24px" bold mr="4px">
                     {nft.marketData.currentAskPrice}
                   </Text>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Grid, Text, Button, Input, BinanceIcon, ErrorIcon } from '@pancakeswap/uikit'
+import { Flex, Grid, Text, Button, Input, MoleIcon, ErrorIcon } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'
@@ -53,7 +53,7 @@ const TransferStage: React.FC<TransferStageProps> = ({
                 {t('Lowest price')}
               </Text>
               <Flex alignItems="center" justifyContent="flex-end">
-                <BinanceIcon width={16} height={16} mr="4px" />
+                <MoleIcon width={16} height={16} mr="4px" />
                 <Text small>{lowestPrice}</Text>
               </Flex>
             </>

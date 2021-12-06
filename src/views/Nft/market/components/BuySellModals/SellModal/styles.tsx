@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Box, Flex, Text, BinanceIcon, Input } from '@pancakeswap/uikit'
+import { Modal, Box, Flex, Text, MoleIcon, Input } from '@pancakeswap/uikit'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { SellingStage } from './types'
@@ -47,7 +47,7 @@ export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount }) => {
   if (!bnbAmount || bnbAmount === 0) {
     return (
       <Flex alignItems="center" justifyContent="flex-end">
-        <BinanceIcon width={16} height={16} mr="4px" />
+        <MoleIcon width={16} height={16} mr="4px" />
         <Text bold mr="4px">
           -
         </Text>
@@ -57,7 +57,7 @@ export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount }) => {
   const usdAmount = multiplyPriceByAmount(bnbBusdPrice, bnbAmount)
   return (
     <Flex alignItems="center" justifyContent="flex-end">
-      <BinanceIcon width={16} height={16} mr="4px" />
+      <MoleIcon width={16} height={16} mr="4px" />
       <Text bold mr="4px">{`${bnbAmount.toLocaleString(undefined, {
         minimumFractionDigits: 3,
         maximumFractionDigits: 3,
@@ -82,7 +82,7 @@ export const FeeAmountCell: React.FC<FeeAmountCellProps> = ({ bnbAmount, creator
   if (!bnbAmount || bnbAmount === 0) {
     return (
       <Flex alignItems="center" justifyContent="flex-end">
-        <BinanceIcon width={16} height={16} mr="4px" />
+        <MoleIcon width={16} height={16} mr="4px" />
         <Text bold mr="4px">
           -
         </Text>
@@ -95,7 +95,7 @@ export const FeeAmountCell: React.FC<FeeAmountCellProps> = ({ bnbAmount, creator
   const feeAmount = bnbAmount * totalFeeAsDecimal
   return (
     <Flex alignItems="center" justifyContent="flex-end">
-      <BinanceIcon width={16} height={16} mr="4px" />
+      <MoleIcon width={16} height={16} mr="4px" />
       <Text bold mr="4px">{`${feeAmount.toLocaleString(undefined, {
         minimumFractionDigits: 3,
         maximumFractionDigits: 6,

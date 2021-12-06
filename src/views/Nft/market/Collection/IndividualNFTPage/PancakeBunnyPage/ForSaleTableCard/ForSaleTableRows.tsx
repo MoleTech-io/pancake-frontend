@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
 import { Price } from '@pancakeswap/sdk'
-import { Button, Grid, Text, Flex, Box, BinanceIcon, useModal, Skeleton } from '@pancakeswap/uikit'
+import { Button, Grid, Text, Flex, Box, MoleIcon, useModal, Skeleton } from '@pancakeswap/uikit'
 import { formatNumber } from 'utils/formatBalance'
 import { ContextApi } from 'contexts/Localization/types'
 import { useTranslation } from 'contexts/Localization'
@@ -42,7 +42,7 @@ const Row: React.FC<RowProps> = ({ t, nft, bnbBusdPrice, account }) => {
     <>
       <Box pl="24px">
         <Flex justifySelf="flex-start" alignItems="center" width="max-content">
-          <BinanceIcon width="24px" height="24px" mr="8px" />
+          <MoleIcon width="24px" height="24px" mr="8px" />
           <Text bold>{formatNumber(parseFloat(nft.marketData.currentAskPrice), 0, 3)}</Text>
         </Flex>
         {bnbBusdPrice ? (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, BinanceIcon } from '@pancakeswap/uikit'
+import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, MoleIcon } from '@pancakeswap/uikit'
 import { Price } from '@pancakeswap/sdk'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
@@ -50,7 +50,7 @@ const MobileModal: React.FC<MobileModalProps> = ({ nft, activity, bnbBusdPrice, 
             <ActivityEventText fontSize="14px" marketEvent={activity.marketEvent} />
             {priceAsFloat ? (
               <Flex justifyContent="flex-end" alignItems="center">
-                <BinanceIcon width="12px" height="12px" mr="4px" />
+                <MoleIcon width="12px" height="12px" mr="4px" />
                 <Text mr="4px" bold>
                   {priceAsFloat}
                 </Text>

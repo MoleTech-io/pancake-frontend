@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Grid, Flex, Text, BinanceIcon, Skeleton } from '@pancakeswap/uikit'
+import { Modal, Grid, Flex, Text, MoleIcon, Skeleton } from '@pancakeswap/uikit'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { BuyingStage } from './types'
@@ -53,7 +53,7 @@ export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount, isLoadi
   return (
     <Flex justifySelf="flex-end" flexDirection="column">
       <Flex justifyContent="flex-end">
-        <BinanceIcon height={16} width={16} mr="4px" />
+        <MoleIcon height={16} width={16} mr="4px" />
         <Text bold color={isInsufficient ? 'failure' : 'text'}>{`${bnbAmount.toLocaleString(undefined, {
           minimumFractionDigits: 3,
           maximumFractionDigits: 3,

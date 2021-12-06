@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Card, Grid, SellIcon, Text, useModal, Box, BinanceIcon, Skeleton, Button } from '@pancakeswap/uikit'
+import { Flex, Card, Grid, SellIcon, Text, useModal, Box, MoleIcon, Skeleton, Button } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import { NftToken } from 'state/nftMarket/types'
@@ -79,7 +79,7 @@ const OwnerCard: React.FC<OwnerCardProps> = ({ nft, isOwnNft, nftIsProfilePic })
               {nft.marketData?.isTradable ? (
                 <>
                   <Flex justifySelf="flex-start" alignItems="center" width="max-content">
-                    <BinanceIcon width="24px" height="24px" mr="8px" />
+                    <MoleIcon width="24px" height="24px" mr="8px" />
                     <Text bold>{formatNumber(parseFloat(nft.marketData.currentAskPrice), 0, 3)}</Text>
                   </Flex>
                   {bnbBusdPrice ? (

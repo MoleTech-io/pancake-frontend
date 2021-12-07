@@ -39,7 +39,6 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
 
   const { creatorFee, tradingFee } = useGetCollection(nftToSell.collectionAddress)
   const creatorFeeAsNumber = parseFloat(creatorFee)
-  console.log("########## creator fee  ###########", creatorFeeAsNumber)
   const tradingFeeAsNumber = parseFloat(tradingFee)
   const molePrice = useMoleBusdPrice()
   const priceAsFloat = parseFloat(price)

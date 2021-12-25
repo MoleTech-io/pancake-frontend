@@ -8,7 +8,7 @@ import {
   SellIcon,
   WalletFilledIcon,
   CameraIcon,
-  BinanceIcon,
+  MoleIcon,
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'
@@ -62,7 +62,7 @@ const CollectibleRow: React.FC<CollectibleRowProps> = ({ nft }) => {
               {t('Your price')}
             </Text>
             <Flex justifySelf="flex-end" width="max-content">
-              <BinanceIcon width="16px" height="16px" mr="4px" />
+              <MoleIcon width="16px" height="16px" mr="4px" />
               <Text small>{nft.marketData.currentAskPrice}</Text>
             </Flex>
           </>

@@ -7,7 +7,6 @@ export const API_PROFILE = process.env.REACT_APP_API_PROFILE
 export const API_NFT = process.env.REACT_APP_API_NFT
 export const SNAPSHOT_API = `${SNAPSHOT_BASE_URL}/graphql`
 export const SNAPSHOT_HUB_API = `${SNAPSHOT_BASE_URL}/api/message`
-export const BITQUERY_API = 'https://graphql.bitquery.io'
 
 /**
  * V1 will be deprecated but is still used to claim old rounds
@@ -16,4 +15,4 @@ export const GRAPH_API_PREDICTION_V1 = 'https://api.thegraph.com/subgraphs/name/
 
 export const INFO_CLIENT = 'https://bsc.streamingfast.io/subgraphs/name/pancakeswap/exchange-v2'
 export const BLOCKS_CLIENT = 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks'
-export const GRAPH_API_NFTMARKET = process.env.REACT_APP_GRAPH_API_NFT_MARKET
+export const GRAPH_API_NFTMARKET = 'https://api.thegraph.com/subgraphs/name/moletech-io/moleswap'

@@ -9,7 +9,7 @@ import { ArrowBackIcon, ArrowForwardIcon, Card, Flex, Table, Text, Th, useMatchB
 import { getNftsFromDifferentCollectionsApi, getUserActivity } from 'state/nftMarket/helpers'
 import { NftToken, TokenIdWithCollectionAddress, UserNftInitializationState } from 'state/nftMarket/types'
 import { useTranslation } from 'contexts/Localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import useTheme from 'hooks/useTheme'
 import { useParams } from 'react-router'
 import { Activity, sortUserActivity } from '../../utils/sortUserActivity'
@@ -32,12 +32,12 @@ const ActivityHistory = () => {
   const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
   const [sortedUserActivities, setSortedUserActivities] = useState<Activity[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const { activity: userActivity, userNftsInitializationState } = useUserNfts()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const { activity: userActivity } = useUserNfts()
+  const moleBusdPrice = useMoleBusdPrice()
   const { isXs, isSm } = useMatchBreakpoints()
 
   useEffect(() => {
-    if (account && userNftsInitializationState === UserNftInitializationState.INITIALIZED) {
+    if (account && userActivity.initializationState === UserNftInitializationState.INITIALIZED) {
       const differentAddress =
         accountAddress && isAddress(accountAddress)
           ? account.toLowerCase() !== accountAddress.toLocaleLowerCase()
@@ -47,7 +47,7 @@ const ActivityHistory = () => {
         setIsLoading(false)
       }
     }
-  }, [account, userNftsInitializationState, userActivity, accountAddress])
+  }, [account, userActivity, accountAddress])
 
   useEffect(() => {
     const fetchAddressActivity = async () => {
@@ -153,7 +153,7 @@ const ActivityHistory = () => {
                       key={`${activity.nft.tokenId}${activity.timestamp}`}
                       activity={activity}
                       nft={nftMeta}
-                      bnbBusdPrice={bnbBusdPrice}
+                      moleBusdPrice={moleBusdPrice}
                     />
                   )
                 })

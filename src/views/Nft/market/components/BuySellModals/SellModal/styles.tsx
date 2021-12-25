@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Box, Flex, Text, BinanceIcon, Input } from '@pancakeswap/uikit'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { Modal, Box, Flex, Text, MoleIcon, Input } from '@pancakeswap/uikit'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { SellingStage } from './types'
 
@@ -38,26 +38,26 @@ export const RightAlignedInput = styled(Input)`
   text-align: right;
 `
 
-interface BnbAmountCellProps {
+interface MoleAmountCellProps {
   bnbAmount: number
 }
 
-export const BnbAmountCell: React.FC<BnbAmountCellProps> = ({ bnbAmount }) => {
-  const bnbBusdPrice = useBNBBusdPrice()
+export const MoleAmountCell: React.FC<MoleAmountCellProps> = ({ bnbAmount }) => {
+  const moleBusdPrice = useMoleBusdPrice()
   if (!bnbAmount || bnbAmount === 0) {
     return (
       <Flex alignItems="center" justifyContent="flex-end">
-        <BinanceIcon width={16} height={16} mr="4px" />
+        <MoleIcon width={16} height={16} mr="4px" />
         <Text bold mr="4px">
           -
         </Text>
       </Flex>
     )
   }
-  const usdAmount = multiplyPriceByAmount(bnbBusdPrice, bnbAmount)
+  const usdAmount = multiplyPriceByAmount(moleBusdPrice, bnbAmount)
   return (
     <Flex alignItems="center" justifyContent="flex-end">
-      <BinanceIcon width={16} height={16} mr="4px" />
+      <MoleIcon width={16} height={16} mr="4px" />
       <Text bold mr="4px">{`${bnbAmount.toLocaleString(undefined, {
         minimumFractionDigits: 3,
         maximumFractionDigits: 3,
@@ -82,7 +82,7 @@ export const FeeAmountCell: React.FC<FeeAmountCellProps> = ({ bnbAmount, creator
   if (!bnbAmount || bnbAmount === 0) {
     return (
       <Flex alignItems="center" justifyContent="flex-end">
-        <BinanceIcon width={16} height={16} mr="4px" />
+        <MoleIcon width={16} height={16} mr="4px" />
         <Text bold mr="4px">
           -
         </Text>
@@ -95,7 +95,7 @@ export const FeeAmountCell: React.FC<FeeAmountCellProps> = ({ bnbAmount, creator
   const feeAmount = bnbAmount * totalFeeAsDecimal
   return (
     <Flex alignItems="center" justifyContent="flex-end">
-      <BinanceIcon width={16} height={16} mr="4px" />
+      <MoleIcon width={16} height={16} mr="4px" />
       <Text bold mr="4px">{`${feeAmount.toLocaleString(undefined, {
         minimumFractionDigits: 3,
         maximumFractionDigits: 6,

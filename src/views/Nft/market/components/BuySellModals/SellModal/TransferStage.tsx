@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Grid, Text, Button, Input, BinanceIcon, ErrorIcon } from '@pancakeswap/uikit'
+import { Flex, Grid, Text, Button, Input, MoleIcon, ErrorIcon } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'
@@ -47,13 +47,17 @@ const TransferStage: React.FC<TransferStageProps> = ({
           <Text fontSize="12px" color="textSubtle" textAlign="right">
             {nftToSell.collectionName}
           </Text>
-          <Text small color="textSubtle">
-            {t('Lowest price')}
-          </Text>
-          <Flex alignItems="center" justifyContent="flex-end">
-            <BinanceIcon width={16} height={16} mr="4px" />
-            <Text small>{lowestPrice}</Text>
-          </Flex>
+          {lowestPrice && (
+            <>
+              <Text small color="textSubtle">
+                {t('Lowest price')}
+              </Text>
+              <Flex alignItems="center" justifyContent="flex-end">
+                <MoleIcon width={16} height={16} mr="4px" />
+                <Text small>{lowestPrice}</Text>
+              </Flex>
+            </>
+          )}
         </Grid>
       </Flex>
       <GreyedOutContainer>
@@ -79,7 +83,7 @@ const TransferStage: React.FC<TransferStageProps> = ({
           <ErrorIcon width={24} height={24} color="textSubtle" />
         </Flex>
         <Text small color="textSubtle">
-          {t('This action will send your wallet to the address you have indicated above. Make sure it’s the correct')}
+          {t('This action will send your NFT to the address you have indicated above. Make sure it’s the correct')}
         </Text>
       </Grid>
       <Divider />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, BinanceIcon } from '@pancakeswap/uikit'
+import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, MoleIcon } from '@pancakeswap/uikit'
 import { Price } from '@pancakeswap/sdk'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
@@ -22,16 +22,16 @@ const RoundedImage = styled(Image)`
 interface MobileModalProps extends InjectedModalProps {
   activity: Activity
   nft: NftToken
-  bnbBusdPrice: Price
+  moleBusdPrice: Price
   localeTimestamp: string
 }
 
-const MobileModal: React.FC<MobileModalProps> = ({ nft, activity, bnbBusdPrice, localeTimestamp, onDismiss }) => {
+const MobileModal: React.FC<MobileModalProps> = ({ nft, activity, moleBusdPrice, localeTimestamp, onDismiss }) => {
   const { chainId } = useActiveWeb3React()
   const { t } = useTranslation()
   const { theme } = useTheme()
   const priceAsFloat = parseFloat(activity.price)
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, priceAsFloat)
+  const priceInUsd = multiplyPriceByAmount(moleBusdPrice, priceAsFloat)
 
   return (
     <Modal title={t('Transaction Details')} onDismiss={onDismiss} headerBackground={theme.colors.gradients.cardHeader}>
@@ -50,7 +50,7 @@ const MobileModal: React.FC<MobileModalProps> = ({ nft, activity, bnbBusdPrice, 
             <ActivityEventText fontSize="14px" marketEvent={activity.marketEvent} />
             {priceAsFloat ? (
               <Flex justifyContent="flex-end" alignItems="center">
-                <BinanceIcon width="12px" height="12px" mr="4px" />
+                <MoleIcon width="12px" height="12px" mr="4px" />
                 <Text mr="4px" bold>
                   {priceAsFloat}
                 </Text>

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react'
-import { Flex, Grid, Box, Text, Button, BinanceIcon, ErrorIcon, useTooltip } from '@pancakeswap/uikit'
+import { Flex, Grid, Box, Text, Button, MoleIcon, ErrorIcon, useTooltip } from '@pancakeswap/uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useMoleBusdPrice } from 'hooks/useBUSDPrice'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'
 import { useGetCollection } from 'state/nftMarket/hooks'
 import { Divider } from '../shared/styles'
-import { GreyedOutContainer, BnbAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
+import { GreyedOutContainer, MoleAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
 
 interface SetPriceStageProps {
   nftToSell: NftToken
@@ -40,9 +40,9 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
   const { creatorFee, tradingFee } = useGetCollection(nftToSell.collectionAddress)
   const creatorFeeAsNumber = parseFloat(creatorFee)
   const tradingFeeAsNumber = parseFloat(tradingFee)
-  const bnbPrice = useBNBBusdPrice()
+  const molePrice = useMoleBusdPrice()
   const priceAsFloat = parseFloat(price)
-  const priceInUsd = multiplyPriceByAmount(bnbPrice, priceAsFloat)
+  const priceInUsd = multiplyPriceByAmount(molePrice, priceAsFloat)
 
   const priceIsOutOfRange = priceAsFloat > MAX_PRICE || priceAsFloat < MIN_PRICE
 
@@ -87,8 +87,8 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
         </Text>
         <Flex>
           <Flex flex="1" alignItems="center">
-            <BinanceIcon width={24} height={24} mr="4px" />
-            <Text bold>WBNB</Text>
+            <MoleIcon width={24} height={24} mr="4px" />
+            <Text bold>MOLE</Text>
           </Flex>
           <Flex flex="2">
             <RightAlignedInput
@@ -139,7 +139,7 @@ const SetPriceStage: React.FC<SetPriceStageProps> = ({
             <Text small color="textSubtle">
               {t('Lowest price on market')}
             </Text>
-            <BnbAmountCell bnbAmount={lowestPrice} />
+            <MoleAmountCell bnbAmount={lowestPrice} />
           </Flex>
         )}
       </GreyedOutContainer>

@@ -144,28 +144,6 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: serializedTokens.wbnb,
   },
   {
-    pid: 446,
-    lpSymbol: 'BMON-BUSD LP',
-    lpAddresses: {
-      97: '',
-      56: '0x00e53C169dA54a7E11172aEEDf8Eb87F060F479e',
-    },
-    token: serializedTokens.bmon,
-    quoteToken: serializedTokens.busd,
-    isCommunity: true,
-  },
-  {
-    pid: 437,
-    lpSymbol: 'BMON-BNB LP',
-    lpAddresses: {
-      97: '',
-      56: '0x3C2b7B578Dd2175A1c3524Aa0D515106282Bf108',
-    },
-    token: serializedTokens.bmon,
-    quoteToken: serializedTokens.wbnb,
-    isCommunity: true,
-  },
-  {
     pid: 458,
     lpSymbol: 'PROS-BNB LP',
     lpAddresses: {
@@ -204,17 +182,6 @@ const farms: SerializedFarmConfig[] = [
       56: '0x3747e3e107223539FD09bb730b055A1f11F78Adf',
     },
     token: serializedTokens.gnt,
-    quoteToken: serializedTokens.wbnb,
-    isCommunity: true,
-  },
-  {
-    pid: 425,
-    lpSymbol: 'DVI-BNB LP',
-    lpAddresses: {
-      97: '',
-      56: '0x89ebf9cd99864f6e51bd7a578965922029cab977',
-    },
-    token: serializedTokens.dvi,
     quoteToken: serializedTokens.wbnb,
     isCommunity: true,
   },
@@ -410,17 +377,6 @@ const farms: SerializedFarmConfig[] = [
       56: '0xe267018C943E77992e7e515724B07b9CE7938124',
     },
     token: serializedTokens.hero,
-    quoteToken: serializedTokens.wbnb,
-    isCommunity: true,
-  },
-  {
-    pid: 438,
-    lpSymbol: 'WSG-BNB LP',
-    lpAddresses: {
-      97: '',
-      56: '0x37Ff7D4459ad96E0B01275E5efffe091f33c2CAD',
-    },
-    token: serializedTokens.wsg,
     quoteToken: serializedTokens.wbnb,
     isCommunity: true,
   },
@@ -682,16 +638,6 @@ const farms: SerializedFarmConfig[] = [
       56: '0x2a995d355d5df641e878c0f366685741fd18d004',
     },
     token: serializedTokens.htb,
-    quoteToken: serializedTokens.wbnb,
-  },
-  {
-    pid: 351,
-    lpSymbol: 'JGN-BNB LP',
-    lpAddresses: {
-      97: '',
-      56: '0x7275278C94b5e20708380561C4Af98F38dDC6374',
-    },
-    token: serializedTokens.jgn,
     quoteToken: serializedTokens.wbnb,
   },
   {

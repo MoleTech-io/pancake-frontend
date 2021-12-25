@@ -71,9 +71,9 @@ export const getNftsFromCollectionApi = async (
 ): Promise<ApiResponseCollectionTokens> => {
   const isPBCollection = collectionAddress.toLowerCase() === pancakeBunniesAddress.toLowerCase()
   const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
+  // const requestPath = `${API_NFT}/collections/${collectionAddress}/tokens${
     !isPBCollection ? `?page=${page}&size=${size}` : ``
   }`
-
   const res = await fetch(requestPath)
   if (res.ok) {
     const data = await res.json()
@@ -290,6 +290,7 @@ export const getMarketDataForTokenIds = async (
         where: { tokenId_in: existingTokenIds },
       },
     )
+
     return res.collection.nfts
   } catch (error) {
     console.error(`Failed to fetch market data for NFTs stored tokens`, error)
@@ -319,7 +320,6 @@ export const getNftsMarketData = async (
       `,
       { where, first, skip, orderBy, orderDirection },
     )
-
     return res.nfts
   } catch (error) {
     console.error('Failed to fetch NFTs market data', error)

@@ -8,7 +8,7 @@ import { BASE_URL } from 'config'
 import { NftToken } from 'state/nftMarket/types'
 import { getBscScanLinkForNft } from 'utils'
 import { Divider, RoundedImage } from '../shared/styles'
-import { BorderedBox, BnbAmountCell } from './styles'
+import { BorderedBox, MoleAmountCell } from './styles'
 import { PaymentCurrency } from './types'
 
 interface ReviewStageProps {
@@ -66,28 +66,34 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
           <Text small color="textSubtle">
             {t('Pay with')}
           </Text>
-          <ButtonMenu
+          <Flex justifySelf="flex-end">
+          <Text small color="textSubtle">
+            {t('MOLE')}
+          </Text>
+          </Flex>
+          {/* <ButtonMenu
             activeIndex={paymentCurrency}
             onItemClick={(index) => setPaymentCurrency(index)}
             scale="sm"
             variant="subtle"
           >
             <ButtonMenuItem>BNB</ButtonMenuItem>
-            <ButtonMenuItem>WBNB</ButtonMenuItem>
-          </ButtonMenu>
+            <ButtonMenuItem>MOLE</ButtonMenuItem>
+          </ButtonMenu> */}
+        
           <Text small color="textSubtle">
             {t('Total payment')}
           </Text>
-          <BnbAmountCell bnbAmount={nftPrice} />
+          <MoleAmountCell bnbAmount={nftPrice} />
           <Text small color="textSubtle">
-            {t('%symbol% in wallet', { symbol: paymentCurrency === PaymentCurrency.BNB ? 'BNB' : 'WBNB' })}
+            {t('MOLE in wallet')}
           </Text>
           {!account ? (
             <Flex justifySelf="flex-end">
               <ConnectWalletButton scale="sm" />
             </Flex>
           ) : (
-            <BnbAmountCell
+            <MoleAmountCell
               bnbAmount={walletBalance}
               isLoading={walletFetchStatus !== FetchStatus.SUCCESS}
               isInsufficient={walletFetchStatus === FetchStatus.SUCCESS && notEnoughBnbForPurchase}
@@ -97,15 +103,13 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
         {walletFetchStatus === FetchStatus.SUCCESS && notEnoughBnbForPurchase && (
           <Message p="8px" variant="danger">
             <Text>
-              {t('Not enough %symbol% to purchase this NFT', {
-                symbol: paymentCurrency === PaymentCurrency.BNB ? 'BNB' : 'WBNB',
-              })}
+              {t('Not enough MOLE to purchase this NFT')}
             </Text>
           </Message>
         )}
         <Flex alignItems="center">
           <Text my="16px" mr="4px">
-            {t('Convert between BNB and WBNB for free')}:
+            {t('Convert between BNB and MOLE for free')}:
           </Text>
           <Button
             as={Link}
@@ -135,7 +139,7 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
           href={`${BASE_URL}/swap?outputCurrency=BNB`}
           variant="secondary"
         >
-          {t('Get %symbol1% or %symbol2%', { symbol1: 'BNB', symbol2: 'WBNB' })}
+          {t('Get %symbol1% or %symbol2%', { symbol1: 'BNB', symbol2: 'MOLE' })}
         </Button>
       </Flex>
     </>

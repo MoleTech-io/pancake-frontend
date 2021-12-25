@@ -80,15 +80,15 @@ export default {
     97: '0x981aE96378e770DE44F89cD9175E708f9EDB70a9',
   },
   nftMarket: {
-    56: '0x17539cCa21C7933Df5c980172d22659B8C345C5A',
-    97: '0x7f9f37ddcaa33893f9beb3d8748c8d6bfbde6ab2',
+    56: '0xfa94b3057390b07c2f89cda919225daf34270ba6',
+    97: '',
   },
   nftSale: {
     56: '0x29fE7148636b7Ae0b1E53777b28dfbaA9327af8E',
     97: '0xe486De509c5381cbdBF3e71F57D7F1f7570f5c46',
   },
-  pancakeSquad: {
-    56: '0x0a8901b0E25DEb55A87524f0cC164E9644020EBA',
-    97: '0xfC0c3F11fDA72Cb9A56F28Ec8D44C0ae4B3ABF86',
+  insightSquad: {
+    56: '0xBF61e6dF4e53EeE40F36b51b624EF9F4dFef2104',
+    97: '',
   },
 }

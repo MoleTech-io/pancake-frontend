@@ -2,7 +2,7 @@ import { Address } from '../types'
 
 export enum CollectionKey {
   PANCAKE = 'pancake',
-  SQUAD = 'pancakeSquad',
+  SQUAD = 'insightSquad',
 }
 
 export type Collection = {

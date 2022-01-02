@@ -20,7 +20,6 @@ const StyledCell = styled(BaseCell)`
 const ContributeCell: React.FC<AprCellProps> = ({ pool }) => {
   const { t } = useTranslation()
   const { crowdloanLink, bonus } = pool
-  console.log(pool);
   return (
     <StyledCell role="cell">
       <CellContent>

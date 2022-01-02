@@ -5,7 +5,7 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { DeserializedPool } from 'state/types'
-import AprRow from './AprRow'
+import ContributeRow from './ContributeRow'
 import { StyledCard } from './StyledCard'
 import CardFooter from './CardFooter'
 import StyledCardHeader from './StyledCardHeader'
@@ -29,12 +29,12 @@ const PoolCard: React.FC<{ pool: DeserializedPool; account: string }> = ({ pool,
         isFinished={isFinished && sousId !== 0}
       />
       <CardBody>
-        <AprRow pool={pool} stakedBalance={stakedBalance} />
+        <ContributeRow pool={pool} stakedBalance={stakedBalance} />
         <Flex mt="24px" flexDirection="column">
           {account ? (
             <CardActions pool={pool} stakedBalance={stakedBalance} />
           ) : (
-            <>
+            <>  
               <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
                 {t('Start earning')}
               </Text>

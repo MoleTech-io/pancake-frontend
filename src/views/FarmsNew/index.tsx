@@ -86,7 +86,7 @@ const Pools: React.FC = () => {
   const location = useLocation()
   const { t } = useTranslation()
   const { account } = useWeb3React()
-  const { pools: poolsWithoutAutoVault, userDataLoaded } = usePools()
+  const { pools: poolsWithoutAutoVault, userDataLoaded } = usePools(0)
   const [stakedOnly, setStakedOnly] = useUserPoolStakedOnly()
   const [viewMode, setViewMode] = useUserPoolsViewMode()
   const [numberOfPoolsVisible, setNumberOfPoolsVisible] = useState(NUMBER_OF_POOLS_VISIBLE)
@@ -309,7 +309,7 @@ const Pools: React.FC = () => {
               <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
                 {t('Search')}
               </Text>
-              <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
+              <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Farms" />
             </LabelWrapper>
           </FilterContainer>
         </PoolControls>

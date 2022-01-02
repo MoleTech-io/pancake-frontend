@@ -80,7 +80,7 @@ export const mainnetTokens = {
     18,
     'mACA(700 DOT contributed）',
     'mACA 700DOT crowdloan',
-    'https://moletech.io/',
+    'https://acala.network/',
   ),
   mclv: new Token(
     MAINNET,
@@ -88,7 +88,7 @@ export const mainnetTokens = {
     18,
     'mCLV(500 DOT contributed）',
     'mCLV 500DOT crowdloan',
-    'https://moletech.io/',
+    'https://clover.finance/',
   ),
   mefi: new Token(
     MAINNET,
@@ -96,7 +96,15 @@ export const mainnetTokens = {
     18,
     'mEFI(800 DOT contributed）',
     'mEFI 800DOT crowdloan',
-    'https://moletech.io/',
+    'https://efinity.io/',
+  ),
+  mcfg: new Token(
+    MAINNET,
+    '0xA53C0aA9FaF0B2EB4417a76915e899E569E32bab',
+    18,
+    'mCFG(600 DOT contributed）',
+    'mCFG 600DOT crowdloan',
+    'https://centrifuge.io/',
   ),
   mglmr: new Token(
     MAINNET,
@@ -104,7 +112,7 @@ export const mainnetTokens = {
     18,
     'mGLMR(700 DOT contributed）',
     'mGLMR 700DOT crowdloan',
-    'https://moletech.io/',
+    'https://moonbeam.foundation/',
   ),
   mastr: new Token(
     MAINNET,
@@ -112,7 +120,7 @@ export const mainnetTokens = {
     18,
     'mASTR(100 DOT contributed）',
     'mASTR 100DOT crowdloan',
-    'https://moletech.io/',
+    'https://astar.network/',
   ),
   mpara: new Token(
     MAINNET,
@@ -120,7 +128,7 @@ export const mainnetTokens = {
     18,
     'mPARA(150 DOT contributed）',
     'mPARA 150DOT crowdloan',
-    'https://moletech.io/',
+    'https://parallel.fi/',
   ),
   cake: new Token(
     MAINNET,

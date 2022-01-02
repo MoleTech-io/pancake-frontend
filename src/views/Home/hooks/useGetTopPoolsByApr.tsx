@@ -17,7 +17,7 @@ enum FetchStatus {
 
 const useGetTopPoolsByApr = (isIntersecting: boolean) => {
   const dispatch = useAppDispatch()
-  const { pools: poolsWithoutAutoVault } = usePools()
+  const { pools: poolsWithoutAutoVault } = usePools(0)
   const {
     fees: { performanceFee },
   } = useCakeVault()

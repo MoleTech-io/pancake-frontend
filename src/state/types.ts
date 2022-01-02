@@ -73,6 +73,8 @@ export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps 
   totalStaked?: BigNumber
   stakingLimit?: BigNumber
   isUnlimited: boolean
+  crowdloanLink?: string
+  bonus?: string
   userData?: {
     allowance: BigNumber
     stakingTokenBalance: BigNumber

@@ -41,12 +41,13 @@ export const useFetchUserPools = (account) => {
   }, [account, dispatch, fastRefresh])
 }
 
-export const usePools = (isFarm?: boolean ): { pools: DeserializedPool[]; userDataLoaded: boolean } => {
+export const usePools = (business: number ): { pools: DeserializedPool[]; userDataLoaded: boolean } => {
   const { pools, userDataLoaded } = useSelector((state: State) => ({
     pools: state.pools.data,
     userDataLoaded: state.pools.userDataLoaded,
   }))
-  if(isFarm || isFarm == null) return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || isLp).map(transformPool), userDataLoaded }
+  if(business === 0) return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || isLp).map(transformPool), userDataLoaded }
+  if(business === 2) return { pools: pools.filter(({ isCrowdloan, sousId })=> sousId === 0 || isCrowdloan).map(transformPool), userDataLoaded }
   return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || !isLp).map(transformPool), userDataLoaded }
 }
 

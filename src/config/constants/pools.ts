@@ -18,6 +18,7 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
     isLp: false,
+    isCrowdloan:false,
     isUnlimited: true,
   },
   {
@@ -35,6 +36,7 @@ const pools: SerializedPoolConfig[] = [
     isFinished: false,
     isLp: false,
     isUnlimited: true,
+    isCrowdloan:false,
     rewardsToken: 1200000000000000000000000,
   },
   {
@@ -51,6 +53,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.1',
     isFinished: false,
     isLp: true,
+    isCrowdloan:false,
     isUnlimited: true,
   },
   {
@@ -67,6 +70,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.0002',
     isFinished: false,
     isLp: true,
+    isCrowdloan:false,
     isUnlimited: true,
   },
   {
@@ -83,6 +87,7 @@ const pools: SerializedPoolConfig[] = [
       tokenPerBlock: '0.08',
       isFinished: true,
       isLp: true,
+      isCrowdloan:false,
       isUnlimited: false,
   },
     // DSC TEST for MOLE-BUST LP start
@@ -117,6 +122,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -133,6 +139,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -149,6 +156,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -165,6 +173,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -181,6 +190,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -197,6 +207,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
     {
@@ -213,8 +224,31 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      isCrowdloan:false,
       isUnlimited: false,
     },
+    {
+      sousId: 228,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mcfg,
+      contractAddress: {
+        97: '',
+        56: '0x5C46b65387c17A07D526Fc7dA9Ab86F53da73374',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=Q0cytb2sab78VqhWe7Eb',
+      bonus: 'Contribute ~30% +5%'
+    },
+
+
+
 ]
 
 export default pools

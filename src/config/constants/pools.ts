@@ -183,6 +183,38 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isUnlimited: false,
     },
+    {
+      sousId: 226,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mclv,
+      contractAddress: {
+        97: '',
+        56: '0xd3c144aAB35b735c92a56a5EEa87564b8a845f16',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isUnlimited: false,
+    },
+    {
+      sousId: 227,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mefi,
+      contractAddress: {
+        97: '',
+        56: '0x011a2f305a39f93f3799f1d3f51f7e44a6b8149e',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isUnlimited: false,
+    },
 ]
 
 export default pools

@@ -128,15 +128,15 @@ const App: React.FC = () => {
             <Route path="/voting/proposal/:id">
               <Proposal />
             </Route>
-
             {/* NFT */}
             <Route path="/nfts">
-              {/* <ComingSoon /> */}
-              <NftMarket />
+              <ComingSoon />
+              {/* <NftMarket /> */}
             </Route>
 
             <Route path="/insight-squad">
-              <PancakeSquad />
+              <ComingSoon />
+              {/* <PancakeSquad /> */}
             </Route>
 
             {/* Info pages */}

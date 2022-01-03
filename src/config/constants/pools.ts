@@ -244,11 +244,68 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=Q0cytb2sab78VqhWe7Eb',
-      bonus: 'Contribute ~30% +5%'
+      bonus: 'Contribute ~30%+5%'
+    },
+    {
+      sousId: 229,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mlayr,
+      contractAddress: {
+        97: '',
+        56: '0x51078a84030922d76f2C0e8E879450Eae5316805',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2019?referral=0x7a131ba16aec4e5e7d975d55e63eea77990391571b142ce0180ce75c9c659205',
+      bonus: 'Contribute ~15%'
+    },
+    {
+      sousId: 230,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mintr,
+      contractAddress: {
+        97: '',
+        56: '0x98a078379D73f726C0E15B66735F76999022e260',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://crowdloan.interlay.io?referral=0x14e5856bf7f241ac542ede4d9eddf85bc695725834bbb1e662a2a089c9b1fd5e',
+      bonus: 'Contribute +5%'
+    },
+    {
+      sousId: 231,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mlit,
+      contractAddress: {
+        97: '',
+        56: '0xFf8E2F2ba952B8F65f95386a0A2C9Aa9561b5335',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://crowdloan.litentry.com/?source=QH2RGI',
+      bonus: 'Contribute ~25%+2.5%'
     },
 
 
-
+    
 ]
 
 export default pools

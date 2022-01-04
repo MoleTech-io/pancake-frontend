@@ -12,6 +12,7 @@ import EndsInCell from './Cells/EndsInCell'
 import ExpandActionCell from './Cells/ExpandActionCell'
 import ActionPanel from './ActionPanel/ActionPanel'
 import AutoEarningsCell from './Cells/AutoEarningsCell'
+import TradeCell from './Cells/TradeCell'
 
 
 interface PoolRowProps {
@@ -51,6 +52,7 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
         {isLargerScreen && <TotalStakedCell pool={pool} />}
         <ExpandActionCell expanded={expanded} isFullLayout={isTablet || isDesktop} />
         <ContributeCell pool={pool} />
+        <TradeCell pool={pool} />
       </StyledRow>
       {shouldRenderActionPanel && (
         <ActionPanel

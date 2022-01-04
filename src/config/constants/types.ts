@@ -102,6 +102,7 @@ export interface SerializedPoolConfig extends PoolConfigBaseProps {
   isUnlimited: boolean
   rewardsToken?: number
   crowdloanLink?: string
+  tradeLink?: string
   bonus?: string
 }
 

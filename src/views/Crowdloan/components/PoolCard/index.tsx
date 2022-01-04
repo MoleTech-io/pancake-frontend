@@ -6,6 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { DeserializedPool } from 'state/types'
 import ContributeRow from './ContributeRow'
+import TradeRow from './TradeRow'
 import { StyledCard } from './StyledCard'
 import CardFooter from './CardFooter'
 import StyledCardHeader from './StyledCardHeader'
@@ -30,6 +31,7 @@ const PoolCard: React.FC<{ pool: DeserializedPool; account: string }> = ({ pool,
       />
       <CardBody>
         <ContributeRow pool={pool} stakedBalance={stakedBalance} />
+        <TradeRow pool={pool} stakedBalance={stakedBalance} />
         <Flex mt="24px" flexDirection="column">
           {account ? (
             <CardActions pool={pool} stakedBalance={stakedBalance} />

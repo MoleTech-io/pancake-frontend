@@ -17,19 +17,19 @@ const StyledCell = styled(BaseCell)`
   }
 `
 
-const ContributeCell: React.FC<AprCellProps> = ({ pool }) => {
+const TradeCell: React.FC<AprCellProps> = ({ pool }) => {
   const { t } = useTranslation()
-  const { crowdloanLink, bonus } = pool
+  const { tradeLink } = pool
   return (
     <StyledCell role="cell">
       <CellContent>
-      {crowdloanLink && <Link to={{ pathname: crowdloanLink }} target="_blank">
-          <Button variant='primary'>{t(bonus)}</Button>
+      {tradeLink && <Link to={{ pathname: tradeLink }} target="_blank">
+          <Button variant='primary'>Available To trade</Button>
         </Link>}
-      {!crowdloanLink && <Button variant='secondary'>Completed</Button>}
+      {!tradeLink && <Button variant='secondary'>Not available</Button>}
       </CellContent>
     </StyledCell>
   )
 }
 
-export default ContributeCell
+export default TradeCell

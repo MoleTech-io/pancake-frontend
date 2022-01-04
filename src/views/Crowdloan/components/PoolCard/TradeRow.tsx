@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { Flex, Button } from '@pancakeswap/uikit'
 import { DeserializedPool } from 'state/types'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from 'contexts/Localization'
 
 const ContributeLabelContainer = styled(Flex)`
   cursor: pointer;
@@ -20,20 +19,19 @@ interface ContributeRowProps {
   performanceFee?: number
 }
 
-const ContributeRow: React.FC<ContributeRowProps> = ({ pool }) => {
-  const { t } = useTranslation()
-  const { crowdloanLink, bonus } = pool
+const TradeRow: React.FC<ContributeRowProps> = ({ pool }) => {
+  const { tradeLink } = pool
 
   return (
      <Flex alignItems="center" justifyContent="space-between">
       <ContributeLabelContainer alignItems="center">
-        {crowdloanLink && <Link to={{ pathname: crowdloanLink }} target="_blank">
-          <Button variant='primary'>{t(bonus)}</Button>
+      {tradeLink && <Link to={{ pathname: tradeLink }} target="_blank">
+          <Button variant='primary'>Go to trade</Button>
         </Link>}
-        {!crowdloanLink && <Button variant='primary'>Completed</Button>}    
+      {!tradeLink && <Button variant='secondary'>Not available</Button>}  
       </ContributeLabelContainer>
     </Flex>
   )
 }
 
-export default ContributeRow
+export default TradeRow

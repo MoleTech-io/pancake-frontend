@@ -46,9 +46,10 @@ export const usePools = (business: number ): { pools: DeserializedPool[]; userDa
     pools: state.pools.data,
     userDataLoaded: state.pools.userDataLoaded,
   }))
-  if(business === 0) return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || isLp).map(transformPool), userDataLoaded }
-  if(business === 2) return { pools: pools.filter(({ isCrowdloan, sousId })=> sousId === 0 || isCrowdloan).map(transformPool), userDataLoaded }
-  return { pools: pools.filter(({ isLp, sousId })=> sousId === 0 || !isLp).map(transformPool), userDataLoaded }
+  if(business === 0) return { pools: pools.filter(({ isLp,  isCrowdloan })=> isLp && !isCrowdloan).map(transformPool), userDataLoaded }
+  if(business === 2) return { pools: pools.filter(({ isCrowdloan,  isLp })=>  isCrowdloan && !isLp).map(transformPool), userDataLoaded }
+  if(business === 1) return { pools: pools.filter(({ isLp, sousId, isCrowdloan })=> sousId === 0 || !(isLp || isCrowdloan)).map(transformPool), userDataLoaded }
+  throw Error('Pools business not existed')
 }
 
 export const useFetchCakeVault = () => {

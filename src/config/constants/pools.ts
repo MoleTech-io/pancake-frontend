@@ -109,6 +109,25 @@ const pools: SerializedPoolConfig[] = [
     },
     // crowdloan on going
     {
+      sousId: 98,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mcrab,
+      contractAddress: {
+        97: '',
+        56: '0xFaA3c487a977E6535e42e532B82A6d6128a72FDf',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.0456621',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://crab.network/plo_contribute?referral=GAmT23RCcuK4oD2qRnm5utXpnEfWqmuvKbv5VsNGyza3nnX',
+      bonus: 'Contribute MAX+25%'
+    },
+    {
       sousId: 99,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mteer,
@@ -128,7 +147,6 @@ const pools: SerializedPoolConfig[] = [
       crowdloanLink:'https://crowdloan.integritee.network/?ref=R8v2CDg3',
       bonus: 'Contribute MAX+35%'
     },
-
     {
       sousId: 100,
       stakingToken: serializedTokens.mole,

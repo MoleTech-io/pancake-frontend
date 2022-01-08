@@ -106,6 +106,14 @@ export const mainnetTokens = {
     'mTEER 10KSM crowdloan',
     'https://crowdloan.integritee.network/?ref=R8v2CDg3',
   ),
+  mcrab: new Token(
+    MAINNET,
+    '0xaAfe2c65eBB4Ee06cD3929d42aBA62D7909Fbf24',
+    18,
+    'mCRAB(10 KSM contributed）',
+    'mCRAB 10KSM crowdloan',
+    'https://crab.network/plo_contribute?referral=GAmT23RCcuK4oD2qRnm5utXpnEfWqmuvKbv5VsNGyza3nnX',
+  ),
   mcfg: new Token(
     MAINNET,
     '0xA53C0aA9FaF0B2EB4417a76915e899E569E32bab',

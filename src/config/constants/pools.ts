@@ -109,6 +109,27 @@ const pools: SerializedPoolConfig[] = [
     },
     // crowdloan on going
     {
+      sousId: 99,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mteer,
+      contractAddress: {
+        97: '',
+        56: '0x8f4241fE288F5cA6fA54814860a220bcf34C1390',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.0456621',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      tradeLink: 'https://www.gate.ac/signup/9149808',
+      crowdloanLink:'https://crowdloan.integritee.network/?ref=R8v2CDg3',
+      bonus: 'Contribute MAX+35%'
+    },
+
+    {
       sousId: 100,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mcfg,
@@ -127,7 +148,6 @@ const pools: SerializedPoolConfig[] = [
       tradeLink: 'https://www.okex.com/join/3518573',
       crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=Q0cytb2sab78VqhWe7Eb',
       bonus: 'Contribute ~30%+5%'
-      
     },
     {
       sousId: 101,

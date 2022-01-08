@@ -98,6 +98,14 @@ export const mainnetTokens = {
     'mEFI 800DOT crowdloan',
     'https://efinity.io/',
   ),
+  mteer: new Token(
+    MAINNET,
+    '0xe440089e9546a9aeaf6d7b8f720d73b41afde772',
+    18,
+    'mTEER(10 KSM contributed）',
+    'mTEER 10KSM crowdloan',
+    'https://crowdloan.integritee.network/?ref=R8v2CDg3',
+  ),
   mcfg: new Token(
     MAINNET,
     '0xA53C0aA9FaF0B2EB4417a76915e899E569E32bab',

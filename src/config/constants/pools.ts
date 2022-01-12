@@ -259,6 +259,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
+      tradeLink: 'https://www.kucoin.com/r/QBSSSE3C',
       isCrowdloan:true,
       isUnlimited: false,
     },

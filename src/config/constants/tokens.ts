@@ -104,7 +104,7 @@ export const mainnetTokens = {
     18,
     'mTEER(10 KSM contributed）',
     'mTEER 10KSM crowdloan',
-    'https://crowdloan.integritee.network/?ref=R8v2CDg3',
+    'https://crowdloan.integritee.network/?ref=a3z7w5Qi',
   ),
   mcrab: new Token(
     MAINNET,

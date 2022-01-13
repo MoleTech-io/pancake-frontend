@@ -107,6 +107,23 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:false,
       isUnlimited: false,
     },
+    {
+      sousId: 97,
+      stakingToken: serializedTokens.mglmr,
+      earningToken: serializedTokens.mole,
+      contractAddress: {
+        97: '',
+        56: '0x9A85a732bacb39345Bca04A22e2232Fa8dda9a8C',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.01623285',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:false,
+      isUnlimited: false,
+    },
     // crowdloan on going
     {
       sousId: 98,
@@ -145,7 +162,7 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.gate.ac/signup/9149808',
-      crowdloanLink:'https://crowdloan.integritee.network/?ref=R8v2CDg3',
+      crowdloanLink:'https://crowdloan.integritee.network/?ref=a3z7w5Qi',
       bonus: 'Contribute MAX+35%'
     },
     {
@@ -165,7 +182,7 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.okex.com/join/3518573',
-      crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=Q0cytb2sab78VqhWe7Eb',
+      crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=1k6gSk0CHHvFNQl8qaza',
       bonus: 'Contribute ~30%+5%'
     },
     {
@@ -184,7 +201,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2019?referral=0x7a131ba16aec4e5e7d975d55e63eea77990391571b142ce0180ce75c9c659205',
+      crowdloanLink:'https://crowdloan.composable.finance/polkadot?refCode=Nxhfgd',
       bonus: 'Contribute ~15%'
     },
     {
@@ -203,7 +220,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://crowdloan.interlay.io?referral=0x14e5856bf7f241ac542ede4d9eddf85bc695725834bbb1e662a2a089c9b1fd5e',
+      crowdloanLink:'https://crowdloan.interlay.io/?referral=0x955262ec77ddeca2da4e0f61c925b79d32a507d49af9fb03613fdc8fbc164505',
       bonus: 'Contribute +5%'
     },
     {

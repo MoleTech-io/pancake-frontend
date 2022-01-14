@@ -201,7 +201,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://crowdloan.composable.finance/polkadot?refCode=Nxhfgd',
+      // crowdloanLink:'https://crowdloan.composable.finance/polkadot?refCode=Nxhfgd',
       bonus: 'Contribute ~15%'
     },
     {

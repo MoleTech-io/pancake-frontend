@@ -41,6 +41,21 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
+    label: t('AD Auction'),
+    href: `${nftsBaseUrl}`,
+    icon: 'Nft',
+    items: [
+      {
+        label: t('Overview'),
+        href: `${nftsBaseUrl}`,
+      },
+      {
+        label: t('Collections'),
+        href: `${nftsBaseUrl}/collections`,
+      },
+    ],
+  },
+  {
     label: t('Win'),
     href: '/prediction',
     icon: 'Trophy',
@@ -52,21 +67,6 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Lottery'),
         href: '/lottery',
-      },
-    ],
-  },
-  {
-    label: t('NFT'),
-    href: `${nftsBaseUrl}`,
-    icon: 'Nft',
-    items: [
-      {
-        label: t('Overview'),
-        href: `${nftsBaseUrl}`,
-      },
-      {
-        label: t('Collections'),
-        href: `${nftsBaseUrl}/collections`,
       },
     ],
   },

@@ -61,7 +61,7 @@ const Home = () => {
         <StyledHeaderInner>
           <div>
             <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('NFT Market')}
+              {t('AD Auction')}
             </Heading>
             <Heading scale="lg" color="text">
               {t('Buy and Sell NFTs on Binance Smart Chain')}

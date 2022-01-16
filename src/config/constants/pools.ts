@@ -297,6 +297,7 @@ const pools: SerializedPoolConfig[] = [
       isFinished: false,
       isLp: false,
       isCrowdloan:true,
+      tradeLink: 'https://www.gate.ac/signup/9149808',
       isUnlimited: false,
     },
     {

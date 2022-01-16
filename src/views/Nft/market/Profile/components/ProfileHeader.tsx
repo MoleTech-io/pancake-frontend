@@ -144,7 +144,7 @@ const ProfileHeader: React.FC<HeaderProps> = ({
             {truncateHash(accountPath)}
           </Link>
         )}
-        {accountPath && isConnectedAccount && (!profile || !profile?.nft) && getActivateButton()}
+        {/* {accountPath && isConnectedAccount && (!profile || !profile?.nft) && getActivateButton()} */}
       </Flex>
     )
   }

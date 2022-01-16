@@ -162,7 +162,7 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.gate.ac/signup/9149808',
-      crowdloanLink:'https://crowdloan.integritee.network/?ref=a3z7w5Qi',
+      // crowdloanLink:'https://crowdloan.integritee.network/?ref=a3z7w5Qi',
       bonus: 'Contribute MAX+35%'
     },
     {
@@ -277,6 +277,8 @@ const pools: SerializedPoolConfig[] = [
       isFinished: false,
       isLp: false,
       tradeLink: 'https://www.kucoin.com/r/QBSSSE3C',
+      crowdloanLink:'https://apps.moonbeam.network/moonbeam',
+      bonus: 'Application go Staking',
       isCrowdloan:true,
       isUnlimited: false,
     },
@@ -330,6 +332,8 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       tradeLink: 'https://www.okex.com/join/3518573',
+      crowdloanLink:'https://apps-ivy.clover.finance/#/staking',
+      bonus: 'Application go Staking',
       isUnlimited: false,
     },
     {

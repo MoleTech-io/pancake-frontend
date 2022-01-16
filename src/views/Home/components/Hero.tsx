@@ -112,6 +112,9 @@ const Hero = () => {
           <Heading scale="md" mb="24px">
             {t('Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.')}
           </Heading>
+          <Heading scale="md" mb="20px">
+            {t('Prohibit residents of mainland China and areas that prohibit cryptocurrency trading from to trade in the MoleSwap.')}
+          </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
             <Link to="/swap">

@@ -1,3 +1,9 @@
+// https://www.okex.com/join/3518573439
+// https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI
+// https://www.kucoin.com/r/QBSSSEL6
+// https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9
+// https://www.gate.ac/signup/9149808
+
 import { serializeTokens } from './tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
@@ -181,7 +187,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      tradeLink: 'https://www.okex.com/join/3518573',
+      tradeLink: 'https://www.okex.com/join/3518573439',
       crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=1k6gSk0CHHvFNQl8qaza',
       bonus: 'Contribute ~30%+5%'
     },
@@ -239,7 +245,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=21139331',
+      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
       crowdloanLink:'https://crowdloan.litentry.com/?source=QH2RGI',
       bonus: 'Contribute ~25%+2.5%'
     },
@@ -276,7 +282,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
-      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=21139331',
+      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
       crowdloanLink:'https://apps.moonbeam.network/moonbeam',
       bonus: 'Application go Staking',
       isCrowdloan:true,
@@ -297,7 +303,7 @@ const pools: SerializedPoolConfig[] = [
       isFinished: false,
       isLp: false,
       isCrowdloan:true,
-      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=21139331',
+      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
       isUnlimited: false,
     },
     {
@@ -332,7 +338,7 @@ const pools: SerializedPoolConfig[] = [
       isFinished: false,
       isLp: false,
       isCrowdloan:true,
-      tradeLink: 'https://www.okex.com/join/3518573',
+      tradeLink: 'https://www.okex.com/join/3518573439',
       crowdloanLink:'https://apps-ivy.clover.finance/#/staking',
       bonus: 'Application go Staking',
       isUnlimited: false,
@@ -352,7 +358,7 @@ const pools: SerializedPoolConfig[] = [
       isFinished: false,
       isLp: false,
       isCrowdloan:true,
-      tradeLink: 'https://www.okex.com/join/3518573',
+      tradeLink: 'https://www.okex.com/join/3518573439',
       isUnlimited: false,
     },
 ]

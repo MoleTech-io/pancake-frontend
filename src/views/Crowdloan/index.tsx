@@ -258,6 +258,16 @@ const Pools: React.FC = () => {
         <Heading scale="lg" color="text">
           {t('Contribute parachains to earn.')}
         </Heading>
+        <Heading>
+        <NavLink exact activeClassName="active" to={{ pathname: 'https://bitout.info/about/' }} target="_blank">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              {t('Fee discount: Binance 80%,Okex 85%,Kucoin 90%,MEXC 90%,GateIO 90%')}
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NavLink>
+        </Heading>
         <NavLink exact activeClassName="active" to={{ pathname: 'https://www.youtube.com/watch?v=65Q_1xa8_U8&t=2s' }} target="_blank">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">
@@ -266,6 +276,9 @@ const Pools: React.FC = () => {
             <ArrowForwardIcon color="primary" />
           </Button>
         </NavLink>
+
+        
+        
       </PageHeader>
       <Page>
         <PoolControls>

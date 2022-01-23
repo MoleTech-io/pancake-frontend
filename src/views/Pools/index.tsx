@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { ethers } from 'ethers'
 import { formatUnits } from 'ethers/lib/utils'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@pancakeswap/uikit'
+import { Heading, Flex, Image, Button, Text, ArrowForwardIcon } from '@pancakeswap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
@@ -265,6 +265,22 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               {t('High APR, low risk.')}
             </Heading>
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/gJxLiAx_7CU' }} target="_blank">
+              <Button p="0" variant="text">
+                <Text color="primary" bold fontSize="16px" mr="4px">
+                  {t('How to stake KSM? ~20% APR')}
+                </Text>
+                <ArrowForwardIcon color="primary" />
+              </Button>
+            </NavLink>
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/BFxh6ORUox0' }} target="_blank">
+              <Button p="0" variant="text">
+                <Text color="primary" bold fontSize="16px" mr="4px">
+                  {t('How to stake CLV? ~40% APR')}
+                </Text>
+                <ArrowForwardIcon color="primary" />
+              </Button>
+            </NavLink>
           </Flex>
         </Flex>
       </PageHeader>

@@ -255,9 +255,9 @@ const Pools: React.FC = () => {
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('Polkadot Auction')}
         </Heading>
-        <Heading scale="lg" color="text">
+        {/* <Heading scale="lg" color="text">
           {t('Contribute parachains to earn.')}
-        </Heading>
+        </Heading> */}
         <Heading>
         <NavLink exact activeClassName="active" to={{ pathname: 'https://bitout.info/about/' }} target="_blank">
           <Button p="0" variant="text">
@@ -268,6 +268,7 @@ const Pools: React.FC = () => {
           </Button>
         </NavLink>
         </Heading>
+        <Heading>
         <NavLink exact activeClassName="active" to={{ pathname: 'https://www.youtube.com/watch?v=65Q_1xa8_U8&t=2s' }} target="_blank">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">
@@ -276,9 +277,37 @@ const Pools: React.FC = () => {
             <ArrowForwardIcon color="primary" />
           </Button>
         </NavLink>
-
-        
-        
+        </Heading>
+        <Heading>
+        <NavLink exact activeClassName="active" to={{ pathname: 'https://polkadot.js.org/apps/' }} target="_blank">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              {t('Polkadot APP')}
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NavLink>
+        </Heading>
+        <Heading>
+        <NavLink exact activeClassName="active" to={{ pathname: 'https://polkadot.network/auctions/' }} target="_blank">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              {t('Polkadot auction schedule')}
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NavLink>
+        </Heading>
+        <Heading>
+        <NavLink exact activeClassName="active" to={{ pathname: 'https://kusama.network/auctions/' }} target="_blank">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              {t('KSM auction schedule')}
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NavLink>
+        </Heading>
       </PageHeader>
       <Page>
         <PoolControls>

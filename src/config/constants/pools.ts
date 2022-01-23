@@ -148,8 +148,8 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
-      crowdloanLink:'https://crab.network/plo_contribute?referral=GAmT23RCcuK4oD2qRnm5utXpnEfWqmuvKbv5VsNGyza3nnX',
-      bonus: 'Contribute MAX+25%'
+      crowdloanLink:'https://apps.darwinia.network/',
+      bonus: 'Application go Staking'
     },
     {
       sousId: 99,

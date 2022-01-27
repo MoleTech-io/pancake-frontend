@@ -169,7 +169,7 @@ const pools: SerializedPoolConfig[] = [
       isUnlimited: false,
       tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
       crowdloanLink:'https://apps.darwinia.network/',
-      bonus: 'Application go Staking'
+      bonus: 'Application Stake CRAB'
     },
     {
       sousId: 99,
@@ -305,7 +305,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
       crowdloanLink:'https://apps.moonbeam.network/moonbeam',
-      bonus: 'Application go Staking',
+      bonus: 'Application Stake GLMR',
       isCrowdloan:true,
       isUnlimited: false,
     },
@@ -325,6 +325,8 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
+      crowdloanLink:'https://portal.astar.network/#/balance/wallet',
+      bonus: 'Application Stake ASTR',
       isUnlimited: false,
     },
     {
@@ -361,7 +363,7 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       tradeLink: 'https://www.okex.com/join/3518573439',
       crowdloanLink:'https://apps-ivy.clover.finance/#/staking',
-      bonus: 'Application go Staking',
+      bonus: 'Application Stake CLV',
       isUnlimited: false,
     },
     {

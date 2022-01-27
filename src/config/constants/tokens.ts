@@ -106,13 +106,13 @@ export const mainnetTokens = {
     'mTEER 10KSM crowdloan',
     'https://crowdloan.integritee.network/?ref=a3z7w5Qi',
   ),
-  mklit: new Token(
+  meq: new Token(
     MAINNET,
-    '0xaAfe2c65eBB4Ee06cD3929d42aBA62D7909Fbf24',
+    '0x8258186ada4a731ca8ce9be3463ee7348d493c77',
     18,
-    'mKLIT(10 KSM contributed）',
-    'mKLIT 10KSM crowdloan',
-    'https://kusama-crowdloan.litentry.com/?source=5WL3LW',
+    'mEQ(100 DOT contributed）',
+    'mEQ 100DOT crowdloan',
+    'https://xdot.equilibrium.io/en/contribute?refId=0xb861ae89ecec5f45615d83634797bdbe3824780dc777e9c708bed117f6d38e09',
   ),
   mcrab: new Token(
     MAINNET,
@@ -142,8 +142,8 @@ export const mainnetTokens = {
     MAINNET,
     '0x294E1E0CA9869c5779A36EAF05B1A8592805f6bc',
     18,
-    'mINTR(400 DOT contributed）',
-    'mINTR 400DOT crowdloan',
+    'mINTR(600 DOT contributed）',
+    'mINTR 600DOT crowdloan',
     'https://crowdloan.interlay.io?referral=0x14e5856bf7f241ac542ede4d9eddf85bc695725834bbb1e662a2a089c9b1fd5e',
   ),
   mlit: new Token(

@@ -132,6 +132,26 @@ const pools: SerializedPoolConfig[] = [
     },
     // crowdloan on going
     {
+      sousId: 95,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.meq,
+      contractAddress: {
+        97: '',
+        56: '0x8cf6e75f82Ccd54E418304dcd0920e5E0ef9925a',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      // tradeLink: 'https://www.okex.com/join/3518573439',
+      crowdloanLink:'https://xdot.equilibrium.io/en/contribute?refId=0xb861ae89ecec5f45615d83634797bdbe3824780dc777e9c708bed117f6d38e09',
+      bonus: 'Contribute ~20%+5%'
+    },
+    {
       sousId: 98,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mcrab,
@@ -266,9 +286,10 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
+      tradeLink: 'https://www.gate.ac/signup/9149808',
     },
 
-    {
+    { 
       sousId: 223,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mglmr,

@@ -298,6 +298,14 @@ const Pools: React.FC = () => {
                 <ArrowForwardIcon color="primary" />
               </Button>
             </NavLink>
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/A1MqOUH58ag' }} target="_blank">
+              <Button p="0" variant="text">
+                <Text color="primary" bold fontSize="16px" mr="4px">
+                  {t('How to stake FTM? ~15% APR')}
+                </Text>
+                <ArrowForwardIcon color="primary" />
+              </Button>
+            </NavLink>
           </Flex>
         </Flex>
       </PageHeader>

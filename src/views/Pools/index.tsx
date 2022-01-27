@@ -290,7 +290,7 @@ const Pools: React.FC = () => {
               </Button>
             </NavLink>
 
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/O3ANlQYMf9Y' }} target="_blank">
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/VRs5M6vcY_g' }} target="_blank">
               <Button p="0" variant="text">
                 <Text color="primary" bold fontSize="16px" mr="4px">
                   {t('How to stake GLMR? ~100% APR')}

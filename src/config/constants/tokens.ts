@@ -114,6 +114,15 @@ export const mainnetTokens = {
     'mEQ 100DOT crowdloan',
     'https://xdot.equilibrium.io/en/contribute?refId=0xb861ae89ecec5f45615d83634797bdbe3824780dc777e9c708bed117f6d38e09',
   ),
+  mklit: new Token(
+    MAINNET,
+    '0x3cff921144dDD0675cF7CD3435fcEAEEe0dE4097',
+    18,
+    'mkLIT(10 KSM contributed）',
+    'mkLIT 10KSM crowdloan',
+    'https://kusama-crowdloan.litentry.com/?source=5WL3LWhttps://kusama-crowdloan.litentry.com/?source=5WL3LW',
+  ),
+
   mcrab: new Token(
     MAINNET,
     '0xaAfe2c65eBB4Ee06cD3929d42aBA62D7909Fbf24',

@@ -108,7 +108,7 @@ const pools: SerializedPoolConfig[] = [
       harvest: true,
       tokenPerBlock: '56',
       sortOrder: 1,
-      isFinished: false,
+      isFinished: true,
       isLp: false,
       isCrowdloan:false,
       isUnlimited: false,
@@ -131,6 +131,26 @@ const pools: SerializedPoolConfig[] = [
       isUnlimited: false,
     },
     // crowdloan on going
+    {
+      sousId: 94,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mklit,
+      contractAddress: {
+        97: '',
+        56: '0x72aa0d70d26e355b543847e1bf8b73419e727f6c',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.0456621',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
+      crowdloanLink:'https://kusama-crowdloan.litentry.com/?source=5WL3LW',
+      bonus: 'Contribute +5%'
+    },
     {
       sousId: 95,
       stakingToken: serializedTokens.mole,
@@ -208,8 +228,8 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.okex.com/join/3518573439',
-      crowdloanLink:'https://centrifuge.io/parachain/crowdloan/?refer=1k6gSk0CHHvFNQl8qaza',
-      bonus: 'Contribute ~30%+5%'
+      crowdloanLink:'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.centrifuge.io#/staking',
+      bonus: 'Application Stake CFG'
     },
     {
       sousId: 101,

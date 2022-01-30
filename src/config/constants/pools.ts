@@ -16,7 +16,7 @@ const pools: SerializedPoolConfig[] = [
     earningToken: serializedTokens.cake,
     contractAddress: {
       97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
-      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',  
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
@@ -130,6 +130,58 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:false,
       isUnlimited: false,
     },
+    
+    {
+      sousId: 91,
+      stakingToken: serializedTokens.maca,
+      earningToken: serializedTokens.mole,
+      contractAddress: {
+        97: '',
+        56: '0x16a96A6Dd93f073E6Bb00a0D64ADC50Be119F3B1',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.00656868',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:false,
+      isUnlimited: false,
+    },
+    {
+      sousId: 92,
+      stakingToken: serializedTokens.mastr,
+      earningToken: serializedTokens.mole,
+      contractAddress: {
+        97: '',
+        56: '0xFD3063c68C4dA4ebc89223F1eaFA463F03033e21',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.00151585',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:false,
+      isUnlimited: false,
+    },
+    {
+      sousId: 93,
+      stakingToken: serializedTokens.mclv,
+      earningToken: serializedTokens.mole,
+      contractAddress: {
+        97: '',
+        56: '0xc0df774e6f038e94aa1d00c0531164251d954829',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: true,
+      tokenPerBlock: '0.0030317',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:false,
+      isUnlimited: false,
+    },
     // crowdloan on going
     {
       sousId: 94,
@@ -148,8 +200,8 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
-      crowdloanLink:'https://kusama-crowdloan.litentry.com/?source=5WL3LW',
-      bonus: 'Contribute +5%'
+      // crowdloanLink:'https://kusama-crowdloan.litentry.com/?source=5WL3LW',
+      // bonus: 'Contribute +5%'
     },
     {
       sousId: 95,
@@ -306,7 +358,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      tradeLink: 'https://www.gate.ac/signup/9149808',
+      tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
     },
 
     { 
@@ -323,7 +375,7 @@ const pools: SerializedPoolConfig[] = [
       sortOrder: 1,
       isFinished: false,
       isLp: false,
-      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
+      tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
       crowdloanLink:'https://apps.moonbeam.network/moonbeam',
       bonus: 'Application Stake GLMR',
       isCrowdloan:true,

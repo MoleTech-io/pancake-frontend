@@ -220,7 +220,7 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       // tradeLink: 'https://www.okex.com/join/3518573439',
-      crowdloanLink:'https://xdot.equilibrium.io/en/contribute?refId=0xb861ae89ecec5f45615d83634797bdbe3824780dc777e9c708bed117f6d38e09',
+      crowdloanLink:'https://xdot.equilibrium.io/en/contribute?refId=0xfe9321839877bd73155d713b29bae0e4d32e31baf9ebddbfaa6d863ee6296a2a',
       bonus: 'Contribute ~20%+5%'
     },
     {
@@ -318,7 +318,7 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://crowdloan.interlay.io/?referral=0x955262ec77ddeca2da4e0f61c925b79d32a507d49af9fb03613fdc8fbc164505',
+      crowdloanLink:'https://crowdloan.interlay.io?referral=0xee51d2a2aa64ef6a1a99f29fa865e616da602d4f42324a5932a0bf97eeb936d7',
       bonus: 'Contribute +5%'
     },
     {

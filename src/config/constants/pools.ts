@@ -184,6 +184,25 @@ const pools: SerializedPoolConfig[] = [
     },
     // crowdloan on going
     {
+      sousId: 89,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mnodl,
+      contractAddress: {
+        97: '',
+        56: '0x6dFF6778c4A42929F4308D8ed18fdF7f0124F2F0',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      crowdloanLink:'https://parachain.nodle.com/?referralCode=5GETgiGpE46H3VpzhaHT7LQvhMTbhKiLvYFYgT4pCFUuFD86',
+      bonus: 'Contribute +5%'
+    },
+    {
       sousId: 94,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mklit,

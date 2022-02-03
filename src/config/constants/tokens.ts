@@ -74,6 +74,14 @@ export const mainnetTokens = {
     'TOO Token',
     'https://toocoin.vip/',
   ),
+  mnodl: new Token(
+    MAINNET,
+    '0xc8f17618586eF50E134b45ACF9920F51a4232815',
+    18,
+    'mNODL',
+    'mNODL 700DOT crowdloan',
+    'https://parachain.nodle.com/?referralCode=5GETgiGpE46H3VpzhaHT7LQvhMTbhKiLvYFYgT4pCFUuFD86',
+  ),
   maca: new Token(
     MAINNET,
     '0x11209308Df88bb6252899B165Ab3CEDCd2C07cA3',

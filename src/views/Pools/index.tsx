@@ -273,10 +273,10 @@ const Pools: React.FC = () => {
                 <ArrowForwardIcon color="primary" />
               </Button>
             </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/BFxh6ORUox0' }} target="_blank">
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/UPOUUBld_nU' }} target="_blank">
               <Button p="0" variant="text">
                 <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake CLV? ~40% APR')}
+                  {t('How to stake CLV? ~30% APR')}
                 </Text>
                 <ArrowForwardIcon color="primary" />
               </Button>
@@ -310,6 +310,22 @@ const Pools: React.FC = () => {
               <Button p="0" variant="text">
                 <Text color="primary" bold fontSize="16px" mr="4px">
                   {t('How to stake CAKE? ~65% APR')}
+                </Text>
+                <ArrowForwardIcon color="primary" />
+              </Button>
+            </NavLink>
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/ToIeTJD58Mo' }} target="_blank">
+              <Button p="0" variant="text">
+                <Text color="primary" bold fontSize="16px" mr="4px">
+                  {t('How to stake in Sushi? ~65% APR')}
+                </Text>
+                <ArrowForwardIcon color="primary" />
+              </Button>
+            </NavLink>
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/-c0r_qhmr-8' }} target="_blank">
+              <Button p="0" variant="text">
+                <Text color="primary" bold fontSize="16px" mr="4px">
+                  {t('How to stake stable coin in Yearn? ~15% APR')}
                 </Text>
                 <ArrowForwardIcon color="primary" />
               </Button>

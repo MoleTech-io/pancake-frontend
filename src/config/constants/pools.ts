@@ -298,8 +298,8 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      tradeLink: 'https://www.okex.com/join/3518573439',
-      crowdloanLink:'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.centrifuge.io#/staking',
+      tradeLink: 'https://www.gate.ac/signup/9149808',
+      crowdloanLink:'https://portal.chain.centrifuge.io/#/staking',
       bonus: 'Application Stake CFG'
     },
     {

@@ -265,79 +265,15 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               {t('High APR, low risk.')}
             </Heading>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/gJxLiAx_7CU' }} target="_blank">
+            <NavLink exact activeClassName="active" to={{ pathname: 'https://bitout.info/2029/09/23/stake/' }} target="_blank">
               <Button p="0" variant="text">
                 <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake KSM? ~20% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/UPOUUBld_nU' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake CLV? ~30% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/qxjg6v569C8' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake DOT? ~15% APR')}
+                  {t('Staking Mining Tutorials')}
                 </Text>
                 <ArrowForwardIcon color="primary" />
               </Button>
             </NavLink>
 
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/VRs5M6vcY_g' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake GLMR? ~100% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/A1MqOUH58ag' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake FTM? ~15% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/KC_mNJXAn64' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake CAKE? ~65% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/ToIeTJD58Mo' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake in Sushi? ~65% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/-c0r_qhmr-8' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake stable coin in Yearn? ~15% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
-            <NavLink exact activeClassName="active" to={{ pathname: 'https://youtu.be/vrojSPqKz1Y' }} target="_blank">
-              <Button p="0" variant="text">
-                <Text color="primary" bold fontSize="16px" mr="4px">
-                  {t('How to stake RING? ~50% APR')}
-                </Text>
-                <ArrowForwardIcon color="primary" />
-              </Button>
-            </NavLink>
           </Flex>
         </Flex>
       </PageHeader>

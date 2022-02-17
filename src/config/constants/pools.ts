@@ -43,7 +43,7 @@ const pools: SerializedPoolConfig[] = [
     isLp: false,
     isUnlimited: true,
     isCrowdloan:false,
-    rewardsToken: 1200000000000000000000000,
+    rewardsToken: 2000000000000000000000000,
   },
   {
     sousId: 2,
@@ -96,23 +96,6 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:false,
       isUnlimited: false,
   },
-    {
-      sousId: 221,
-      stakingToken: serializedTokens.mole,
-      earningToken: serializedTokens.too,
-      contractAddress: {
-        97: '0x7D0a43a56c2702758D1b2D94DE5b9d0b3954EbE0',
-        56: '0x7D0a43a56c2702758D1b2D94DE5b9d0b3954EbE0',
-      },
-      poolCategory: PoolCategory.CORE,
-      harvest: true,
-      tokenPerBlock: '56',
-      sortOrder: 1,
-      isFinished: true,
-      isLp: false,
-      isCrowdloan:false,
-      isUnlimited: false,
-    },
     {
       sousId: 97,
       stakingToken: serializedTokens.mglmr,

@@ -278,36 +278,6 @@ const Pools: React.FC = () => {
           </Button>
         </NavLink>
         </Heading>
-        <Heading>
-        <NavLink exact activeClassName="active" to={{ pathname: 'https://polkadot.js.org/apps/' }} target="_blank">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Polkadot APP')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
-        </Heading>
-        <Heading>
-        <NavLink exact activeClassName="active" to={{ pathname: 'https://polkadot.network/auctions/' }} target="_blank">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Polkadot auction schedule')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
-        </Heading>
-        <Heading>
-        <NavLink exact activeClassName="active" to={{ pathname: 'https://kusama.network/auctions/' }} target="_blank">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('KSM auction schedule')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
-        </Heading>
       </PageHeader>
       <Page>
         <PoolControls>

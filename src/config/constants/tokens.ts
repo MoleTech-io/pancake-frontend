@@ -66,14 +66,6 @@ export const mainnetTokens = {
     'Mole Token',
     'https://moletech.io/',
   ),
-  too: new Token(
-    MAINNET,
-    '0x33Fea48c8e842a14c62dF14C83c79E43Dd6386fF',
-    10,
-    'TOO',
-    'TOO Token',
-    'https://toocoin.vip/',
-  ),
   mnodl: new Token(
     MAINNET,
     '0xc8f17618586eF50E134b45ACF9920F51a4232815',

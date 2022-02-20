@@ -38,16 +38,6 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: serializedTokens.wbnb,
   },
   {
-    pid: 465,
-    lpSymbol: 'TOO-BUSD LP',
-    lpAddresses: {
-      97: '',
-      56: '0x97359e4b43c5b81de9b9083885ad6208dfddc778',
-    },
-    token: serializedTokens.too,
-    quoteToken: serializedTokens.busd,
-  },
-  {
     pid: 466,
     lpSymbol: 'MOLE-BUSD LP',
     lpAddresses: {

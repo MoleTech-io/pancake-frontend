@@ -320,8 +320,8 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://crowdloan.interlay.io?referral=0xee51d2a2aa64ef6a1a99f29fa865e616da602d4f42324a5932a0bf97eeb936d7',
-      bonus: 'Contribute +5%'
+      // crowdloanLink:'https://crowdloan.interlay.io?referral=0xee51d2a2aa64ef6a1a99f29fa865e616da602d4f42324a5932a0bf97eeb936d7',
+      // bonus: 'Contribute +5%'
     },
     {
       sousId: 103,

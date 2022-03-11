@@ -182,8 +182,8 @@ const pools: SerializedPoolConfig[] = [
       isLp: false,
       isCrowdloan:true,
       isUnlimited: false,
-      crowdloanLink:'https://parachain.nodle.com/?referralCode=5GETgiGpE46H3VpzhaHT7LQvhMTbhKiLvYFYgT4pCFUuFD86',
-      bonus: 'Contribute +5%'
+      // crowdloanLink:'https://parachain.nodle.com/?referralCode=5GETgiGpE46H3VpzhaHT7LQvhMTbhKiLvYFYgT4pCFUuFD86',
+      // bonus: 'Contribute +5%'
     },
     {
       sousId: 94,
@@ -361,6 +361,8 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
+      crowdloanLink:'https://apps.acala.network/home',
+      bonus: 'Application Stake ACA'
     },
 
     { 

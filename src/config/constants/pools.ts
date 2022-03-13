@@ -167,6 +167,46 @@ const pools: SerializedPoolConfig[] = [
     },
     // crowdloan on going
     {
+      sousId: 95,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.meq,
+      contractAddress: {
+        97: '',
+        56: '0x8cf6e75f82Ccd54E418304dcd0920e5E0ef9925a',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      // tradeLink: 'https://www.okex.com/join/3518573439',
+      // crowdloanLink:'https://xdot.equilibrium.io/en/contribute?refId=0xfe9321839877bd73155d713b29bae0e4d32e31baf9ebddbfaa6d863ee6296a2a',
+      // bonus: 'Contribute ~20%+5%'
+    },
+    {
+      sousId: 103,
+      stakingToken: serializedTokens.mole,
+      earningToken: serializedTokens.mlit,
+      contractAddress: {
+        97: '',
+        56: '0xFf8E2F2ba952B8F65f95386a0A2C9Aa9561b5335',
+      },
+      poolCategory: PoolCategory.CORE,
+      harvest: false,
+      tokenPerBlock: '0.02471315',
+      sortOrder: 1,
+      isFinished: false,
+      isLp: false,
+      isCrowdloan:true,
+      isUnlimited: false,
+      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
+      crowdloanLink:'https://crowdloan.litentry.com/?source=QH2RGI',
+      bonus: 'Suspended'
+    },
+    {
       sousId: 89,
       stakingToken: serializedTokens.mole,
       earningToken: serializedTokens.mnodl,
@@ -204,26 +244,6 @@ const pools: SerializedPoolConfig[] = [
       tradeLink: 'https://www.mexc.com/zh-TW/register?inviteCode=1KKQ9',
       // crowdloanLink:'https://kusama-crowdloan.litentry.com/?source=5WL3LW',
       // bonus: 'Contribute +5%'
-    },
-    {
-      sousId: 95,
-      stakingToken: serializedTokens.mole,
-      earningToken: serializedTokens.meq,
-      contractAddress: {
-        97: '',
-        56: '0x8cf6e75f82Ccd54E418304dcd0920e5E0ef9925a',
-      },
-      poolCategory: PoolCategory.CORE,
-      harvest: false,
-      tokenPerBlock: '0.02471315',
-      sortOrder: 1,
-      isFinished: false,
-      isLp: false,
-      isCrowdloan:true,
-      isUnlimited: false,
-      // tradeLink: 'https://www.okex.com/join/3518573439',
-      crowdloanLink:'https://xdot.equilibrium.io/en/contribute?refId=0xfe9321839877bd73155d713b29bae0e4d32e31baf9ebddbfaa6d863ee6296a2a',
-      bonus: 'Contribute ~20%+5%'
     },
     {
       sousId: 98,
@@ -322,26 +342,6 @@ const pools: SerializedPoolConfig[] = [
       isUnlimited: false,
       // crowdloanLink:'https://crowdloan.interlay.io?referral=0xee51d2a2aa64ef6a1a99f29fa865e616da602d4f42324a5932a0bf97eeb936d7',
       // bonus: 'Contribute +5%'
-    },
-    {
-      sousId: 103,
-      stakingToken: serializedTokens.mole,
-      earningToken: serializedTokens.mlit,
-      contractAddress: {
-        97: '',
-        56: '0xFf8E2F2ba952B8F65f95386a0A2C9Aa9561b5335',
-      },
-      poolCategory: PoolCategory.CORE,
-      harvest: false,
-      tokenPerBlock: '0.02471315',
-      sortOrder: 1,
-      isFinished: false,
-      isLp: false,
-      isCrowdloan:true,
-      isUnlimited: false,
-      tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
-      crowdloanLink:'https://crowdloan.litentry.com/?source=QH2RGI',
-      bonus: 'Contribute ~25%+2.5%'
     },
     // crowdloan on completed
     {

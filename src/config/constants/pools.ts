@@ -24,7 +24,7 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
     isLp: false,
-    isCrowdloan:false,
+    isCrowdloan:true,
     isUnlimited: true,
   },
   {

@@ -26,6 +26,7 @@ const StyledRow = styled.div`
 `
 
 const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
+  
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
   const isLargerScreen = isLg || isXl || isXxl
   const [expanded, setExpanded] = useState(false)
@@ -35,6 +36,8 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
     setExpanded((prev) => !prev)
   }
 
+  if(pool.sousId === 0) return null;
+  
   return (
     <>
       <StyledRow role="row" onClick={toggleExpanded}>

@@ -183,8 +183,8 @@ const pools: SerializedPoolConfig[] = [
       isCrowdloan:true,
       isUnlimited: false,
       tradeLink: 'https://accounts.binance.com/zh-CN/register?ref=JIAMGKVI',
-      crowdloanLink:'https://crowdloan.litentry.com/?source=P5EY4R',
-      bonus: 'Contribute +5%'
+      // crowdloanLink:'https://crowdloan.litentry.com/?source=P5EY4R',
+      // bonus: 'Contribute +5%'
     },
     {
       sousId: 95,
